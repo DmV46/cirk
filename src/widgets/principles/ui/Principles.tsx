@@ -16,7 +16,7 @@ export function Principles() {
         <div className={styles.aboutHero}>
           <div className={styles.aboutText}>
             <p className={styles.textBlock}>
-              <TypewriterText text="UNITED CIRCUS STUDIO — это не просто спортивная секция. Это место, где каждый ребенок может раскрыть свой потенциал, преодолеть страхи и научиться владеть своим телом." speed={20} />
+              <TypewriterText text="Объединенная цирковая студия — это не просто спортивная секция. Это место, где каждый ребенок может раскрыть свой потенциал, преодолеть страхи и научиться владеть своим телом." speed={20} />
             </p>
             <p className={styles.textBlock}>
               <RandomRevealText 

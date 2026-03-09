@@ -14,6 +14,9 @@ if (isGithubActions && process.env.GITHUB_REPOSITORY) {
 const nextConfig: NextConfig = {
   output: "export",
   basePath: repo,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: repo,
+  },
   images: {
     unoptimized: true, // Необходимо для работы next/image при статическом экспорте
   },

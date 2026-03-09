@@ -3,10 +3,10 @@ import styles from "./Footer.module.css";
 
 const footerLinks = [
   { href: "/", label: "Главная" },
-  { href: "/about", label: "О нас" },
-  { href: "/trainers", label: "Тренеры" },
-  { href: "/prices", label: "Цены" },
   { href: "/videos", label: "Видео" },
+  { href: "/prices", label: "Цены" },
+  { href: "/trainers", label: "Тренеры" },
+  { href: "/about", label: "О нас" },
   { href: "/faq", label: "FAQ" },
 ];
 

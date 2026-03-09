@@ -10,7 +10,7 @@ export function Hero() {
         muted
         playsInline
         className={styles.heroVideo}
-        src="/bg-video.mp4"
+        src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/bg-video.mp4`}
       />
       <div className={styles.heroBg} />
       <div className={`container ${styles.heroInner}`}>
