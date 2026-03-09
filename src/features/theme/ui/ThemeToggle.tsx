@@ -2,6 +2,7 @@
 
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import styles from "./ThemeToggle.module.css";
 
 export function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
@@ -12,14 +13,14 @@ export function ThemeToggle() {
   }, []);
 
   if (!mounted) {
-    return <div className="theme-toggle-skeleton" />;
+    return <div className={styles.themeToggleSkeleton} />;
   }
 
   return (
     <button
       type="button"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="theme-toggle"
+      className={styles.themeToggle}
       aria-label={
         theme === "dark" ? "Включить светлую тему" : "Включить тёмную тему"
       }

@@ -1,24 +1,32 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { ThemeProvider } from "@/components/ThemeProvider";
+import { Jura, Exo_2, JetBrains_Mono } from "next/font/google";
+import { Header } from "@/widgets/header/ui/Header";
+import { Footer } from "@/widgets/footer/ui/Footer";
+import { ThemeProvider } from "@/app/providers/ThemeProvider";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fontPrimary = Jura({
+  weight: ["700"],
+  variable: "--font-primary",
   subsets: ["latin", "cyrillic"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const fontSecondary = Exo_2({
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-secondary",
+  subsets: ["latin", "cyrillic"],
+});
+
+const fontAccent = JetBrains_Mono({
+  weight: ["400", "700", "800"],
+  variable: "--font-accent",
+  subsets: ["latin", "cyrillic"],
 });
 
 export const metadata: Metadata = {
-  title: "Цирковая студия — Подготовка детей к цирковой гимнастике",
+  title: "Объединенная цирковая студия — Цирковая гимнастика",
   description:
-    "Цирковая студия для детей. Обучение акробатике, воздушной гимнастике и цирковому искусству. Развиваем гибкость, силу и уверенность.",
+    "Цирковая студия нового формата. Обучение акробатике, воздушной гимнастике и цирковому искусству.",
 };
 
 export default function RootLayout({
@@ -29,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="ru" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} layout-root`}
+        className={`${fontPrimary.variable} ${fontSecondary.variable} ${fontAccent.variable} layout-root`}
       >
         <ThemeProvider>
           <Header />

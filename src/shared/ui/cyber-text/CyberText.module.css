@@ -1,0 +1,38 @@
+.neonText {
+  position: relative;
+  display: inline-block;
+  color: var(--foreground);
+  animation: neon-pulse 8s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+@keyframes neon-pulse {
+  0%, 100% {
+    text-shadow: 
+      0 0 10px rgba(0, 216, 216, 0.4),
+      0 0 20px rgba(0, 216, 216, 0.4),
+      0 0 30px var(--teal-neon);
+    color: #fff;
+  }
+  25% {
+    text-shadow: 
+      0 0 10px rgba(180, 0, 216, 0.4),
+      0 0 20px rgba(180, 0, 216, 0.4),
+      0 0 30px var(--purple-neon);
+    color: #fdf;
+  }
+  50% {
+    text-shadow: 
+      0 0 10px rgba(255, 136, 0, 0.4),
+      0 0 20px rgba(255, 136, 0, 0.4),
+      0 0 30px var(--orange-neon);
+    color: #fff;
+  }
+  75% {
+    text-shadow: 
+      0 0 10px rgba(230, 92, 0, 0.4),
+      0 0 20px rgba(230, 92, 0, 0.4),
+      0 0 30px var(--red-neon);
+    color: #ffd;
+  }
+}

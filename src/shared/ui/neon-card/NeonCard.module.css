@@ -1,0 +1,84 @@
+.neonCard {
+  padding: 2rem;
+  border-radius: 8px;
+  background: var(--card);
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+.neonCard:hover {
+  transform: translateY(-8px) scale(1.02);
+  z-index: 10;
+}
+
+.neonCardTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: var(--font-primary);
+  transition: text-shadow 0.3s ease;
+}
+
+.neonCardDesc {
+  color: var(--muted-fg);
+  line-height: 1.5;
+}
+
+/* Orange Neon Card */
+.neonCardOrange {
+  border: 2px solid var(--orange-neon);
+  background: var(--orange-neon-bg);
+  box-shadow: 0 0 32px var(--orange-neon-glow);
+}
+.neonCardOrange:hover {
+  box-shadow: 0 0 40px var(--orange-neon), inset 0 0 20px var(--orange-neon-glow);
+}
+.neonCardOrange .neonCardTitle { color: var(--orange-neon); }
+.neonCardOrange:hover .neonCardTitle { text-shadow: 0 0 8px var(--orange-neon); }
+
+/* Teal/Cyan Neon Card */
+.neonCardTeal {
+  border: 2px solid var(--teal-neon);
+  background: var(--teal-neon-bg);
+  box-shadow: 0 0 32px var(--teal-neon-glow);
+  animation-delay: 1s;
+}
+.neonCardTeal:hover {
+  box-shadow: 0 0 40px var(--teal-neon), inset 0 0 20px var(--teal-neon-glow);
+}
+.neonCardTeal .neonCardTitle { color: var(--teal-neon); }
+.neonCardTeal:hover .neonCardTitle { text-shadow: 0 0 8px var(--teal-neon); }
+
+/* Red Neon Card */
+.neonCardRed {
+  border: 2px solid var(--red-neon);
+  background: var(--red-neon-bg);
+  box-shadow: 0 0 32px var(--red-neon-glow);
+  animation-delay: 2s;
+}
+.neonCardRed:hover {
+  box-shadow: 0 0 40px var(--red-neon), inset 0 0 20px var(--red-neon-glow);
+}
+.neonCardRed .neonCardTitle { color: var(--red-neon); }
+.neonCardRed:hover .neonCardTitle { text-shadow: 0 0 8px var(--red-neon); }
+
+/* Purple Neon Card */
+.neonCardPurple {
+  border: 2px solid var(--purple-neon);
+  background: var(--purple-neon-bg);
+  box-shadow: 0 0 32px var(--purple-neon-glow);
+  animation-delay: 3s;
+}
+.neonCardPurple:hover {
+  box-shadow: 0 0 40px var(--purple-neon), inset 0 0 20px var(--purple-neon-glow);
+}
+.neonCardPurple .neonCardTitle { color: var(--purple-neon); }
+.neonCardPurple:hover .neonCardTitle { text-shadow: 0 0 8px var(--purple-neon); }

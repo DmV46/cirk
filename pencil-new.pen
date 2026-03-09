@@ -1,0 +1,2926 @@
+{
+  "version": "2.8",
+  "children": [
+    {
+      "type": "frame",
+      "id": "VJpDx",
+      "x": -1742,
+      "y": 1500,
+      "name": "Design System",
+      "width": 800,
+      "fill": "#09090b",
+      "layout": "vertical",
+      "gap": 32,
+      "padding": 32,
+      "children": [
+        {
+          "type": "text",
+          "id": "pIbxq",
+          "name": "dsTitle",
+          "fill": "#00d8d8",
+          "content": "Design System - Circus",
+          "fontFamily": "Inter",
+          "fontSize": 32,
+          "fontWeight": "700"
+        },
+        {
+          "type": "frame",
+          "id": "Tmi7b",
+          "name": "Button/Primary",
+          "reusable": true,
+          "fill": "#ff9d00",
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#ff9d0080",
+            "blur": 16
+          },
+          "gap": 8,
+          "padding": [
+            12,
+            24
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "eWBHY",
+              "name": "btnPrimaryText",
+              "fill": "#09090b",
+              "content": "Button",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "800"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "cbqbC",
+          "name": "Button/Secondary",
+          "reusable": true,
+          "fill": "#00000000",
+          "stroke": {
+            "align": "inside",
+            "thickness": 2,
+            "fill": "#00d8d8"
+          },
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#00d8d880",
+            "blur": 16
+          },
+          "gap": 8,
+          "padding": [
+            12,
+            24
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "b2jjJ",
+              "name": "btnSecondaryText",
+              "fill": "#00d8d8",
+              "content": "Button",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "lqg2r",
+          "name": "LogoMark (Dark)",
+          "reusable": true,
+          "width": 48,
+          "height": 48,
+          "fill": "#00000000",
+          "layout": "none",
+          "children": [
+            {
+              "type": "path",
+              "id": "mmUnY",
+              "x": 0,
+              "y": 0,
+              "name": "armLeft",
+              "geometry": "M0 40c2-8 6-16 12-16 6 0 8 8 8 16l-4 0c0-6-2-12-4-12-2 0-6 6-8 12z",
+              "fill": "#00d8d8",
+              "width": 0,
+              "height": 0
+            },
+            {
+              "type": "path",
+              "id": "EoEOj",
+              "x": 0,
+              "y": 0,
+              "name": "armRight",
+              "geometry": "M28 40c0-8 4-16 8-16 6 0 10 8 12 16l-4 0c0-6-4-12-8-12-2 0-6 6-6 12z",
+              "fill": "#00d8d8",
+              "width": 0,
+              "height": 0
+            },
+            {
+              "type": "ellipse",
+              "id": "zpNo2",
+              "x": 10,
+              "y": 18,
+              "name": "headLeft",
+              "fill": "#009999",
+              "width": 12,
+              "height": 12
+            },
+            {
+              "type": "ellipse",
+              "id": "sv2KB",
+              "x": 26,
+              "y": 18,
+              "name": "headRight",
+              "fill": "#009999",
+              "width": 12,
+              "height": 12
+            },
+            {
+              "type": "path",
+              "id": "vNegP",
+              "x": 0,
+              "y": 0,
+              "name": "topPerson",
+              "geometry": "M16 16l0-4c0 0 4-6 8-6 4 0 8 6 8 10l6 0 0-6c0 0-6 0-6-2 0 0-4-6-8-6-4 0-8 6-8 6 0 2-6 2-6 2l0 6z",
+              "fill": "#00d8d8",
+              "width": 0,
+              "height": 0
+            },
+            {
+              "type": "ellipse",
+              "id": "Mzhu4",
+              "x": 19,
+              "y": 12,
+              "name": "headTop",
+              "fill": "#009999",
+              "width": 10,
+              "height": 10
+            },
+            {
+              "type": "ellipse",
+              "id": "t5ENb",
+              "x": 4,
+              "y": 8,
+              "name": "dot1",
+              "fill": "#ff9d00",
+              "width": 6,
+              "height": 6,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#ff9d0080",
+                "blur": 4
+              }
+            },
+            {
+              "type": "ellipse",
+              "id": "8AQlI",
+              "x": 12,
+              "y": 0,
+              "name": "dot2",
+              "fill": "#ff9d00",
+              "width": 6,
+              "height": 6,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#ff9d0080",
+                "blur": 4
+              }
+            },
+            {
+              "type": "ellipse",
+              "id": "S0Hd4",
+              "x": 20,
+              "y": -6,
+              "name": "dot3",
+              "fill": "#ff9d00",
+              "width": 8,
+              "height": 8,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#ff9d0080",
+                "blur": 6
+              }
+            },
+            {
+              "type": "ellipse",
+              "id": "D3d3S",
+              "x": 30,
+              "y": 0,
+              "name": "dot4",
+              "fill": "#ff9d00",
+              "width": 6,
+              "height": 6,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#ff9d0080",
+                "blur": 4
+              }
+            },
+            {
+              "type": "ellipse",
+              "id": "W7awb",
+              "x": 38,
+              "y": 8,
+              "name": "dot5",
+              "fill": "#ff9d00",
+              "width": 6,
+              "height": 6,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#ff9d0080",
+                "blur": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "pV89w",
+          "name": "LogoMark (Light)",
+          "reusable": true,
+          "width": 48,
+          "height": 48,
+          "fill": "#00000000",
+          "layout": "none",
+          "children": [
+            {
+              "type": "path",
+              "id": "okBUf",
+              "x": 0,
+              "y": 0,
+              "name": "armLeftL",
+              "geometry": "M0 40c2-8 6-16 12-16 6 0 8 8 8 16l-4 0c0-6-2-12-4-12-2 0-6 6-8 12z",
+              "fill": "#00b4b4",
+              "width": 0,
+              "height": 0
+            },
+            {
+              "type": "path",
+              "id": "MQ9Fp",
+              "x": 0,
+              "y": 0,
+              "name": "armRightL",
+              "geometry": "M28 40c0-8 4-16 8-16 6 0 10 8 12 16l-4 0c0-6-4-12-8-12-2 0-6 6-6 12z",
+              "fill": "#00b4b4",
+              "width": 0,
+              "height": 0
+            },
+            {
+              "type": "ellipse",
+              "id": "9LxfA",
+              "x": 10,
+              "y": 18,
+              "name": "headLeftL",
+              "fill": "#008080",
+              "width": 12,
+              "height": 12
+            },
+            {
+              "type": "ellipse",
+              "id": "PbmyJ",
+              "x": 26,
+              "y": 18,
+              "name": "headRightL",
+              "fill": "#008080",
+              "width": 12,
+              "height": 12
+            },
+            {
+              "type": "path",
+              "id": "RGkvg",
+              "x": 0,
+              "y": 0,
+              "name": "topPersonL",
+              "geometry": "M16 16l0-4c0 0 4-6 8-6 4 0 8 6 8 10l6 0 0-6c0 0-6 0-6-2 0 0-4-6-8-6-4 0-8 6-8 6 0 2-6 2-6 2l0 6z",
+              "fill": "#00b4b4",
+              "width": 0,
+              "height": 0
+            },
+            {
+              "type": "ellipse",
+              "id": "D2dRx",
+              "x": 19,
+              "y": 12,
+              "name": "headTopL",
+              "fill": "#008080",
+              "width": 10,
+              "height": 10
+            },
+            {
+              "type": "ellipse",
+              "id": "ggmt9",
+              "x": 4,
+              "y": 8,
+              "name": "dot1L",
+              "fill": "#ff8800",
+              "width": 6,
+              "height": 6
+            },
+            {
+              "type": "ellipse",
+              "id": "znmCl",
+              "x": 12,
+              "y": 0,
+              "name": "dot2L",
+              "fill": "#ff8800",
+              "width": 6,
+              "height": 6
+            },
+            {
+              "type": "ellipse",
+              "id": "BwY6l",
+              "x": 20,
+              "y": -6,
+              "name": "dot3L",
+              "fill": "#ff8800",
+              "width": 8,
+              "height": 8
+            },
+            {
+              "type": "ellipse",
+              "id": "p7VmV",
+              "x": 30,
+              "y": 0,
+              "name": "dot4L",
+              "fill": "#ff8800",
+              "width": 6,
+              "height": 6
+            },
+            {
+              "type": "ellipse",
+              "id": "FFQlr",
+              "x": 38,
+              "y": 8,
+              "name": "dot5L",
+              "fill": "#ff8800",
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "VFpDA",
+          "name": "Card",
+          "reusable": true,
+          "width": 320,
+          "fill": "#18181b",
+          "cornerRadius": 4,
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#00d8d8"
+          },
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#00d8d840",
+            "blur": 24
+          },
+          "layout": "vertical",
+          "gap": 16,
+          "padding": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "CPGDM",
+              "name": "cardIcon",
+              "content": "🎪",
+              "fontFamily": "Inter",
+              "fontSize": 32,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "8y3PM",
+              "name": "cardHeader",
+              "fill": "#ffffff",
+              "content": "Card Title",
+              "fontFamily": "Orbitron",
+              "fontSize": 20,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "wXLX5",
+              "name": "cardBody",
+              "fill": "#a1a1aa",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Card description goes here. It provides details.",
+              "fontFamily": "Rajdhani",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "cQfcW",
+          "name": "Logo",
+          "reusable": true,
+          "fill": "#00000000",
+          "gap": 12,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "rectangle",
+              "id": "K9L6e",
+              "name": "logoImg",
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "./public/logo.png",
+                "mode": "fit"
+              },
+              "width": 48,
+              "height": 48
+            },
+            {
+              "type": "text",
+              "id": "mYhU8",
+              "name": "logoText",
+              "fill": "#00d8d8",
+              "content": "UNITED CIRCUS\nSTUDIO",
+              "lineHeight": 1.2,
+              "fontFamily": "Orbitron",
+              "fontSize": 16,
+              "fontWeight": "700"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "cNBk0",
+          "name": "Logo (Light)",
+          "reusable": true,
+          "fill": "#00000000",
+          "gap": 12,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "rectangle",
+              "id": "5p139",
+              "name": "logoImgLight",
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "./public/logo.png",
+                "mode": "fit"
+              },
+              "width": 48,
+              "height": 48
+            },
+            {
+              "type": "text",
+              "id": "GNLAi",
+              "name": "logoTextLight",
+              "fill": "#00b4b4",
+              "content": "UNITED CIRCUS\nSTUDIO",
+              "lineHeight": 1.2,
+              "fontFamily": "Orbitron",
+              "fontSize": 16,
+              "fontWeight": "700"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "upYfp",
+          "name": "StatCard",
+          "reusable": true,
+          "width": 240,
+          "fill": {
+            "type": "gradient",
+            "gradientType": "linear",
+            "enabled": true,
+            "rotation": 45,
+            "size": {
+              "height": 1
+            },
+            "colors": [
+              {
+                "color": "#18181b",
+                "position": 0
+              },
+              {
+                "color": "#ff9d0033",
+                "position": 1
+              }
+            ]
+          },
+          "cornerRadius": 12,
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#ff9d0040"
+          },
+          "layout": "vertical",
+          "gap": 8,
+          "padding": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "FMvwi",
+              "name": "statNumber",
+              "fill": "#ff9d00",
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#ff9d0080",
+                "blur": 16
+              },
+              "content": "10+",
+              "fontFamily": "Space Mono",
+              "fontSize": 40,
+              "fontWeight": "800"
+            },
+            {
+              "type": "text",
+              "id": "3keer",
+              "name": "statDesc",
+              "fill": "#a1a1aa",
+              "content": "лет опыта",
+              "fontFamily": "Rajdhani",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "eJEqm",
+          "name": "TrainerCard",
+          "reusable": true,
+          "width": 280,
+          "fill": "#18181b",
+          "cornerRadius": 12,
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#00d8d840"
+          },
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#00d8d820",
+            "blur": 24
+          },
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "rectangle",
+              "id": "47zHP",
+              "name": "trainerImg",
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "https://placehold.co/400x500/18181b/00d8d8?text=Trainer",
+                "mode": "stretch"
+              },
+              "width": "fill_container",
+              "height": 320
+            },
+            {
+              "type": "frame",
+              "id": "ngEuA",
+              "name": "trainerInfo",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "3Lhiq",
+                  "name": "trainerName",
+                  "fill": "#ffffff",
+                  "content": "Имя Тренера",
+                  "fontFamily": "Orbitron",
+                  "fontSize": 20,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "IMgSe",
+                  "name": "trainerRole",
+                  "fill": "#00d8d8",
+                  "content": "Специализация",
+                  "fontFamily": "Orbitron",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "MozLy",
+                  "name": "trainerBio",
+                  "fill": "#a1a1aa",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Описание опыта тренера.",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "f1ruW",
+          "name": "PriceCard",
+          "reusable": true,
+          "width": 320,
+          "fill": "#18181b",
+          "cornerRadius": 16,
+          "stroke": {
+            "align": "inside",
+            "thickness": 2,
+            "fill": "#ff9d00"
+          },
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#ff9d0040",
+            "blur": 32
+          },
+          "layout": "vertical",
+          "gap": 16,
+          "padding": 32,
+          "children": [
+            {
+              "type": "text",
+              "id": "UomN4",
+              "name": "priceName",
+              "fill": "#ffffff",
+              "content": "Абонемент",
+              "fontFamily": "Orbitron",
+              "fontSize": 24,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "4qKQx",
+              "name": "priceDesc",
+              "fill": "#a1a1aa",
+              "content": "Краткое описание",
+              "fontFamily": "Rajdhani",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "T3acZ",
+              "name": "priceAmount",
+              "fill": "#ff9d00",
+              "content": "5 600 ₽",
+              "fontFamily": "Space Mono",
+              "fontSize": 36,
+              "fontWeight": "800"
+            },
+            {
+              "type": "frame",
+              "id": "ZUcND",
+              "name": "priceFeatures",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "padding": [
+                16,
+                0
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "5S0Hs",
+                  "name": "priceFeat1",
+                  "fill": "#a1a1aa",
+                  "content": "✓ Характеристика 1",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Zhmxb",
+              "name": "BtnSlot",
+              "width": "fill_container",
+              "layout": "vertical",
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "fME2D",
+                  "type": "ref",
+                  "ref": "cbqbC",
+                  "width": "fill_container",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 2,
+                    "fill": "#ff9d00"
+                  },
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#ff9d0080",
+                    "blur": 16
+                  },
+                  "name": "newBtn",
+                  "descendants": {
+                    "b2jjJ": {
+                      "content": "Купить",
+                      "fill": "#ff9d00",
+                      "fontFamily": "Jura"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "iSeSr",
+          "name": "VideoCard",
+          "reusable": true,
+          "width": 360,
+          "fill": "#18181b",
+          "cornerRadius": 12,
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#00d8d840"
+          },
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "L2MYq",
+              "name": "videoThumb",
+              "width": "fill_container",
+              "height": 200,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "https://placehold.co/640x360/18181b/00d8d8?text=Video",
+                "mode": "stretch"
+              },
+              "layout": "none",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 9999,
+                  "id": "Vvah3",
+                  "x": 156,
+                  "y": 76,
+                  "fill": "#ffffff80",
+                  "width": 48,
+                  "height": 48
+                },
+                {
+                  "type": "text",
+                  "id": "KhQlB",
+                  "x": 172,
+                  "y": 88,
+                  "fill": "#09090b",
+                  "content": "▶",
+                  "fontFamily": "Inter",
+                  "fontSize": 24,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "MyTTW",
+                  "x": 300,
+                  "y": 160,
+                  "name": "videoDuration",
+                  "fill": "#ffffff",
+                  "content": "3:45",
+                  "fontFamily": "Space Mono",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "LWP0K",
+              "name": "videoInfo",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "uHn5V",
+                  "name": "videoTitle",
+                  "fill": "#ffffff",
+                  "content": "Название видео",
+                  "fontFamily": "Orbitron",
+                  "fontSize": 18,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "nsqLW",
+                  "name": "videoDesc",
+                  "fill": "#a1a1aa",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Описание выступления",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Ddn2r",
+          "name": "FaqItem",
+          "reusable": true,
+          "width": 600,
+          "fill": "#00000000",
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "f32jl",
+              "name": "faqQ",
+              "width": "fill_container",
+              "fill": "#18181b",
+              "cornerRadius": 12,
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "#ff9d0040"
+              },
+              "gap": 16,
+              "padding": 24,
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "RoyuH",
+                  "fill": "#ffffff",
+                  "content": "Вопрос?",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "euTpe",
+                  "fill": "#ff9d00",
+                  "content": "↓",
+                  "fontFamily": "Inter",
+                  "fontSize": 20,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "fMg0I",
+              "name": "faqA",
+              "width": "fill_container",
+              "fill": "#00000000",
+              "layout": "vertical",
+              "padding": [
+                16,
+                24
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "C0v8C",
+                  "fill": "#a1a1aa",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Ответ на вопрос.",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "szagI",
+          "name": "Header",
+          "reusable": true,
+          "width": "fill_container",
+          "height": 80,
+          "fill": "#09090b",
+          "stroke": {
+            "align": "inside",
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "#00d8d8"
+          },
+          "padding": [
+            0,
+            48
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "id": "Rs4cW",
+              "type": "ref",
+              "ref": "cQfcW"
+            },
+            {
+              "type": "frame",
+              "id": "hvf08",
+              "name": "navSys",
+              "gap": 32,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "2Bfmm",
+                  "fill": "#a1a1aa",
+                  "content": "О нас",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "0MssT",
+                  "fill": "#a1a1aa",
+                  "content": "Тренеры",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "Jz7ur",
+                  "fill": "#a1a1aa",
+                  "content": "Цены",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "sxIka",
+                  "fill": "#a1a1aa",
+                  "content": "Видео",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "djl1j",
+                  "fill": "#a1a1aa",
+                  "content": "FAQ",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "xPhTK",
+          "name": "Footer",
+          "reusable": true,
+          "width": "fill_container",
+          "fill": "#050505",
+          "layout": "vertical",
+          "gap": 32,
+          "padding": 48,
+          "children": [
+            {
+              "type": "text",
+              "id": "cveEM",
+              "name": "footerBottom",
+              "fill": "#64748b",
+              "content": "© 2026 Цирковая студия. Все права защищены.",
+              "fontFamily": "Rajdhani",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "e3fej",
+              "name": "footerTop",
+              "width": "fill_container",
+              "gap": 64,
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "dKfoC",
+                  "name": "footerLeft",
+                  "width": 300,
+                  "layout": "vertical",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "eOaV2",
+                      "fill": "#00d8d8",
+                      "content": "🎪 UNITED CIRCUS STUDIO",
+                      "fontFamily": "Orbitron",
+                      "fontSize": 18,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Zo5fm",
+                      "fill": "#a1a1aa",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Подготовка детей к цирковой гимнастике. Развиваем гибкость, силу и уверенность в себе.",
+                      "fontFamily": "Rajdhani",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "iNaBh",
+                  "name": "footerNav",
+                  "width": "fill_container",
+                  "gap": 24,
+                  "justifyContent": "end",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "X5oJ1",
+                      "fill": "#64748b",
+                      "content": "Главная",
+                      "fontFamily": "Rajdhani",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "EHhQt",
+                      "fill": "#64748b",
+                      "content": "О нас",
+                      "fontFamily": "Rajdhani",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Fw5Cz",
+                      "fill": "#64748b",
+                      "content": "Тренеры",
+                      "fontFamily": "Rajdhani",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "uEWvI",
+                      "fill": "#64748b",
+                      "content": "Цены",
+                      "fontFamily": "Rajdhani",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "WHj16",
+                      "fill": "#64748b",
+                      "content": "Видео",
+                      "fontFamily": "Rajdhani",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "rjHdp",
+                      "fill": "#64748b",
+                      "content": "FAQ",
+                      "fontFamily": "Rajdhani",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "vbM8Y",
+          "name": "HighlightCard",
+          "reusable": true,
+          "width": 400,
+          "fill": "#ff9d0010",
+          "cornerRadius": 8,
+          "stroke": {
+            "align": "inside",
+            "thickness": 2,
+            "fill": "#ff9d00"
+          },
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#ff9d0040",
+            "blur": 32
+          },
+          "layout": "vertical",
+          "gap": 16,
+          "padding": 32,
+          "children": [
+            {
+              "type": "text",
+              "id": "Xwndy",
+              "name": "hcTitle",
+              "fill": "#ff9d00",
+              "content": "💰 Цены",
+              "fontFamily": "Orbitron",
+              "fontSize": 24,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "ddI3M",
+              "name": "hcDesc",
+              "fill": "#a1a1aa",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Описание блока",
+              "lineHeight": 1.5,
+              "fontFamily": "Rajdhani",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "M8pNS",
+              "name": "BtnSlot",
+              "width": "fill_container",
+              "layout": "vertical",
+              "children": [
+                {
+                  "id": "YTxuE",
+                  "type": "ref",
+                  "ref": "Tmi7b"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "M81eK",
+          "name": "Typography",
+          "width": "fill_container",
+          "fill": "#18181b",
+          "cornerRadius": 12,
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#00d8d840"
+          },
+          "layout": "vertical",
+          "gap": 16,
+          "padding": 32,
+          "children": [
+            {
+              "type": "text",
+              "id": "MXXzC",
+              "fill": "#00d8d8",
+              "content": "Cyberpunk Typography",
+              "fontFamily": "Orbitron",
+              "fontSize": 24,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "aLrSd",
+              "fill": "#ffffff",
+              "content": "Primary Font: Orbitron - Заголовки",
+              "fontFamily": "Orbitron",
+              "fontSize": 32,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "otNoI",
+              "fill": "#a1a1aa",
+              "content": "Secondary Font: Rajdhani - Текст и описания",
+              "fontFamily": "Rajdhani",
+              "fontSize": 20,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "NuSxL",
+              "fill": "#ff9d00",
+              "content": "Accent Font: Space Mono - Код и цифры 0123456789",
+              "fontFamily": "Space Mono",
+              "fontSize": 18,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "xxU69",
+      "x": 0,
+      "y": 1500,
+      "name": "Landing Page",
+      "width": 1440,
+      "fill": "#09090b",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "ciDYA",
+          "name": "header",
+          "width": "fill_container",
+          "height": 80,
+          "fill": "#09090b",
+          "stroke": {
+            "align": "inside",
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "#00d8d8"
+          },
+          "padding": [
+            0,
+            48
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "id": "B46hu",
+              "type": "ref",
+              "ref": "cQfcW",
+              "name": "logoDarkRef"
+            },
+            {
+              "type": "frame",
+              "id": "kOGtI",
+              "name": "nav",
+              "gap": 32,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "vBc7F",
+                  "name": "nav1",
+                  "fill": "#a1a1aa",
+                  "content": "О нас",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "mZBvd",
+                  "name": "nav2",
+                  "fill": "#a1a1aa",
+                  "content": "Тренеры",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "cTbcK",
+                  "name": "nav3",
+                  "fill": "#a1a1aa",
+                  "content": "Цены",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "OmdOF",
+          "name": "hero",
+          "width": "fill_container",
+          "fill": "#09090b",
+          "layout": "vertical",
+          "gap": 32,
+          "padding": [
+            120,
+            48
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "IIQPm",
+              "name": "videoNote",
+              "fill": "#ff9d00",
+              "content": "[Фоновое видео IMG_7467.MP4]",
+              "fontFamily": "Space Mono",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "mtuWB",
+              "name": "heroTitle",
+              "fill": "#ffffff",
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#00d8d880",
+                "blur": 32
+              },
+              "content": "Цирковая гимнастика для детей",
+              "textAlign": "center",
+              "fontFamily": "Orbitron",
+              "fontSize": 64,
+              "fontWeight": "800"
+            },
+            {
+              "type": "text",
+              "id": "NZWSI",
+              "name": "heroSubtitle",
+              "fill": "#a1a1aa",
+              "textGrowth": "fixed-width",
+              "width": 800,
+              "content": "Развиваем гибкость, силу и уверенность в себе через цирковое искусство. Акробатика, воздушная гимнастика и многое другое.",
+              "lineHeight": 1.5,
+              "textAlign": "center",
+              "fontFamily": "Rajdhani",
+              "fontSize": 20,
+              "fontWeight": "500"
+            },
+            {
+              "type": "frame",
+              "id": "ozEkN",
+              "name": "heroActions",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "8I8W0",
+                  "type": "ref",
+                  "ref": "Tmi7b",
+                  "name": "btn1",
+                  "descendants": {
+                    "eWBHY": {
+                      "content": "Записаться",
+                      "fontFamily": "Orbitron"
+                    }
+                  }
+                },
+                {
+                  "id": "WSSsW",
+                  "type": "ref",
+                  "ref": "cbqbC",
+                  "name": "btn2",
+                  "descendants": {
+                    "b2jjJ": {
+                      "content": "О нас",
+                      "fontFamily": "Orbitron"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ntTKF",
+          "name": "features",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": [
+            96,
+            48
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "s2FNO",
+              "name": "featuresHeader",
+              "layout": "vertical",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "gKM1X",
+                  "name": "featuresTitle",
+                  "fill": "#00d8d8",
+                  "content": "НАПРАВЛЕНИЯ ЗАНЯТИЙ",
+                  "fontFamily": "Jura",
+                  "fontSize": 40,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "vufy5",
+                  "name": "featuresSubtitle",
+                  "fill": "#a1a1aa",
+                  "content": "Мы предлагаем разнообразные программы для детей",
+                  "fontFamily": "Exo 2",
+                  "fontSize": 18,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "hh5xA",
+              "name": "featuresGrid",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 32,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "oVSnr",
+                  "name": "row1",
+                  "width": "fill_container",
+                  "gap": 32,
+                  "children": [
+                    {
+                      "id": "8NkBL",
+                      "type": "ref",
+                      "ref": "vbM8Y",
+                      "width": "fill_container",
+                      "fill": "#ff9d0010",
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 2,
+                        "fill": "#ff9d00"
+                      },
+                      "name": "card1",
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#ff9d0040",
+                        "blur": 32
+                      },
+                      "descendants": {
+                        "Xwndy": {
+                          "content": "АКРОБАТИКА",
+                          "fill": "#ff9d00",
+                          "fontFamily": "Jura",
+                          "x": 32,
+                          "y": 32
+                        },
+                        "ddI3M": {
+                          "content": "Кувырки, стойки, мосты — базовые элементы, которые развивают координацию и силу. Идеально для старта.",
+                          "fill": "#a1a1aa",
+                          "fontFamily": "Exo 2",
+                          "width": "fill_container",
+                          "height": 0,
+                          "x": 32,
+                          "y": 76
+                        },
+                        "M8pNS": {
+                          "enabled": false,
+                          "width": "fill_container",
+                          "height": "fit_content",
+                          "x": 32,
+                          "y": 123
+                        }
+                      }
+                    },
+                    {
+                      "id": "j7pBM",
+                      "type": "ref",
+                      "ref": "vbM8Y",
+                      "width": "fill_container",
+                      "fill": "#00d8d810",
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 2,
+                        "fill": "#00d8d8"
+                      },
+                      "name": "card2",
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#00d8d840",
+                        "blur": 32
+                      },
+                      "descendants": {
+                        "Xwndy": {
+                          "content": "ВОЗДУШНАЯ ГИМНАСТИКА",
+                          "fill": "#00d8d8",
+                          "fontFamily": "Jura",
+                          "x": 32,
+                          "y": 32
+                        },
+                        "ddI3M": {
+                          "content": "Полотна, кольца, трапеция — занятия, которые развивают гибкость и выносливость в воздухе.",
+                          "fill": "#a1a1aa",
+                          "fontFamily": "Exo 2",
+                          "width": "fill_container",
+                          "height": 0,
+                          "x": 32,
+                          "y": 76
+                        },
+                        "M8pNS": {
+                          "enabled": false,
+                          "width": "fill_container",
+                          "height": "fit_content",
+                          "x": 32,
+                          "y": 123
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Rr4k8",
+                  "name": "row2",
+                  "width": "fill_container",
+                  "gap": 32,
+                  "children": [
+                    {
+                      "id": "LEGfa",
+                      "type": "ref",
+                      "ref": "vbM8Y",
+                      "width": "fill_container",
+                      "fill": "#e65c0010",
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 2,
+                        "fill": "#e65c00"
+                      },
+                      "name": "card3",
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#e65c0040",
+                        "blur": 32
+                      },
+                      "descendants": {
+                        "Xwndy": {
+                          "content": "БАЛАНС И ЖОНГЛИРОВАНИЕ",
+                          "fill": "#e65c00",
+                          "fontFamily": "Jura",
+                          "x": 32,
+                          "y": 32
+                        },
+                        "ddI3M": {
+                          "content": "Стремление к равновесию и ловкости рук — отличная тренировка для мозга и тела.",
+                          "fill": "#a1a1aa",
+                          "fontFamily": "Exo 2",
+                          "width": "fill_container",
+                          "height": 0,
+                          "x": 32,
+                          "y": 76
+                        },
+                        "M8pNS": {
+                          "enabled": false,
+                          "width": "fill_container",
+                          "height": "fit_content",
+                          "x": 32,
+                          "y": 123
+                        }
+                      }
+                    },
+                    {
+                      "id": "6zheG",
+                      "type": "ref",
+                      "ref": "vbM8Y",
+                      "width": "fill_container",
+                      "fill": "#b400d810",
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 2,
+                        "fill": "#b400d8"
+                      },
+                      "name": "card4",
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#00b4b440",
+                        "blur": 32
+                      },
+                      "descendants": {
+                        "Xwndy": {
+                          "content": "РАСТЯЖКА",
+                          "fill": "#b400d8",
+                          "fontFamily": "Jura",
+                          "x": 32,
+                          "y": 32
+                        },
+                        "ddI3M": {
+                          "content": "Комплекс упражнений для развития гибкости всего тела, улучшения осанки и подготовки к сложным трюкам.",
+                          "fill": "#a1a1aa",
+                          "fontFamily": "Exo 2",
+                          "width": "fill_container",
+                          "height": 0,
+                          "x": 32,
+                          "y": 76
+                        },
+                        "M8pNS": {
+                          "enabled": false,
+                          "width": "fill_container",
+                          "height": "fit_content",
+                          "x": 32,
+                          "y": 123
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "70GvM",
+          "name": "aboutPrinciples",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 32,
+          "padding": [
+            96,
+            48
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "nbrpv",
+              "fill": "#00d8d8",
+              "content": "Наши принципы",
+              "fontFamily": "Orbitron",
+              "fontSize": 32,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "RBCiL",
+              "name": "principlesGrid",
+              "width": "fill_container",
+              "gap": 32,
+              "children": [
+                {
+                  "id": "UwdYA",
+                  "type": "ref",
+                  "ref": "VFpDA",
+                  "width": "fill_container",
+                  "descendants": {
+                    "CPGDM": {
+                      "content": "🛡️"
+                    },
+                    "8y3PM": {
+                      "content": "Безопасность",
+                      "fontFamily": "Orbitron"
+                    },
+                    "wXLX5": {
+                      "content": "Соблюдение техники безопасности, страховка на каждом уроке.",
+                      "fontFamily": "Rajdhani"
+                    }
+                  }
+                },
+                {
+                  "id": "Jc3zg",
+                  "type": "ref",
+                  "ref": "VFpDA",
+                  "width": "fill_container",
+                  "descendants": {
+                    "CPGDM": {
+                      "content": "🎯"
+                    },
+                    "8y3PM": {
+                      "content": "Индивидуальный подход",
+                      "fontFamily": "Orbitron"
+                    },
+                    "wXLX5": {
+                      "content": "Небольшие группы позволяют уделять внимание каждому ребёнку.",
+                      "fontFamily": "Rajdhani"
+                    }
+                  }
+                },
+                {
+                  "id": "Ko22V",
+                  "type": "ref",
+                  "ref": "VFpDA",
+                  "width": "fill_container",
+                  "descendants": {
+                    "CPGDM": {
+                      "content": "📈"
+                    },
+                    "8y3PM": {
+                      "content": "Постепенное развитие",
+                      "fontFamily": "Orbitron"
+                    },
+                    "wXLX5": {
+                      "content": "Программа строится от простого к сложному, без спешки.",
+                      "fontFamily": "Rajdhani"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "wE47D",
+          "name": "pricesSection",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": [
+            96,
+            48
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "Bp5Hp",
+              "fill": "#ffffff",
+              "content": "Цены на занятия",
+              "fontFamily": "Orbitron",
+              "fontSize": 40,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "lIOSl",
+              "name": "pricesGrid",
+              "width": "fill_container",
+              "gap": 32,
+              "children": [
+                {
+                  "id": "2JEVm",
+                  "type": "ref",
+                  "ref": "f1ruW",
+                  "width": "fill_container",
+                  "name": "c1",
+                  "descendants": {
+                    "UomN4": {
+                      "content": "РАЗОВОЕ",
+                      "fontFamily": "Jura"
+                    },
+                    "4qKQx": {
+                      "content": "Для тех, кто хочет попробовать",
+                      "fontFamily": "Exo 2"
+                    },
+                    "T3acZ": {
+                      "content": "800 ₽",
+                      "fontFamily": "JetBrains Mono"
+                    },
+                    "ZUcND": {
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "wAhAl",
+                          "fill": "#a1a1aa",
+                          "content": "✓ Доступ ко всем направлениям",
+                          "fontFamily": "Exo 2",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "xmjXP",
+                          "fill": "#a1a1aa",
+                          "content": "✓ Продолжительность 60 мин",
+                          "fontFamily": "Exo 2",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "WKUR9",
+                          "fill": "#a1a1aa",
+                          "content": "✓ Индивидуальный подход",
+                          "fontFamily": "Exo 2",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "p2r6o",
+                  "type": "ref",
+                  "ref": "f1ruW",
+                  "width": "fill_container",
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#ff9d00",
+                    "blur": 32
+                  },
+                  "name": "c2",
+                  "descendants": {
+                    "UomN4": {
+                      "content": "8 ЗАНЯТИЙ",
+                      "fontFamily": "Jura"
+                    },
+                    "4qKQx": {
+                      "content": "Оптимальный выбор для начала",
+                      "fontFamily": "Exo 2"
+                    },
+                    "T3acZ": {
+                      "content": "5 600 ₽",
+                      "fontFamily": "JetBrains Mono"
+                    },
+                    "ZUcND": {
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "6lzin",
+                          "fill": "#ff9d00",
+                          "content": "✓ Скидка 12%",
+                          "fontFamily": "Exo 2",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "HQHEK",
+                          "fill": "#a1a1aa",
+                          "content": "✓ Срок действия 30 дней",
+                          "fontFamily": "Exo 2",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "xipcI",
+                          "fill": "#a1a1aa",
+                          "content": "✓ Заморозка на 7 дней",
+                          "fontFamily": "Exo 2",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    "fME2D": {
+                      "id": "0jOvt",
+                      "type": "ref",
+                      "ref": "Tmi7b",
+                      "stroke": {
+                        "thickness": 0
+                      },
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#ff9d00",
+                        "blur": 16
+                      },
+                      "descendants": {
+                        "eWBHY": {
+                          "content": "Купить",
+                          "fill": "#09090b",
+                          "fontFamily": "Jura"
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "YmJIK",
+                  "type": "ref",
+                  "ref": "f1ruW",
+                  "width": "fill_container",
+                  "name": "c3",
+                  "descendants": {
+                    "UomN4": {
+                      "content": "12 ЗАНЯТИЙ",
+                      "fontFamily": "Jura"
+                    },
+                    "4qKQx": {
+                      "content": "Для регулярных тренировок",
+                      "fontFamily": "Exo 2"
+                    },
+                    "T3acZ": {
+                      "content": "7 200 ₽",
+                      "fontFamily": "JetBrains Mono"
+                    },
+                    "ZUcND": {
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ApH3d",
+                          "fill": "#a1a1aa",
+                          "content": "✓ Скидка 25%",
+                          "fontFamily": "Exo 2",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "GBvz3",
+                          "fill": "#a1a1aa",
+                          "content": "✓ Срок действия 45 дней",
+                          "fontFamily": "Exo 2",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "SV0ro",
+                          "fill": "#a1a1aa",
+                          "content": "✓ Заморозка на 14 дней",
+                          "fontFamily": "Exo 2",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "BxIfT",
+          "name": "aboutSection",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 64,
+          "padding": [
+            96,
+            48
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "9BkC6",
+              "name": "aboutHero",
+              "width": "fill_container",
+              "gap": 64,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "tiavD",
+                  "name": "aboutTextPart",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "wX6ky",
+                      "fill": "#ffffff",
+                      "content": "О нашей студии",
+                      "fontFamily": "Inter",
+                      "fontSize": 48,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "uGwJs",
+                      "fill": "#a1a1aa",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Цирковая студия — это место, где дети от 4 лет знакомятся с цирковым искусством в безопасной и дружелюбной атмосфере.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "mqpQB",
+                      "fill": "#a1a1aa",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Наши тренеры — профессиональные артисты цирка и гимнасты с многолетним опытом работы с детьми.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "hFrPd",
+                  "name": "aboutStatsPart",
+                  "width": 300,
+                  "layout": "vertical",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "id": "RJ5k5",
+                      "type": "ref",
+                      "ref": "upYfp",
+                      "descendants": {
+                        "FMvwi": {
+                          "content": "10+"
+                        },
+                        "3keer": {
+                          "content": "лет опыта работы"
+                        }
+                      }
+                    },
+                    {
+                      "id": "3jfsh",
+                      "type": "ref",
+                      "ref": "upYfp",
+                      "descendants": {
+                        "FMvwi": {
+                          "content": "4+"
+                        },
+                        "3keer": {
+                          "content": "года минимальный возраст"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "CUbKF",
+          "name": "faqSection",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": [
+            96,
+            48
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "iaBd3",
+              "fill": "#ffffff",
+              "content": "Частые вопросы",
+              "fontFamily": "Orbitron",
+              "fontSize": 40,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "3yYq9",
+              "name": "faqList",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "bLVIT",
+                  "type": "ref",
+                  "ref": "Ddn2r",
+                  "width": 800,
+                  "descendants": {
+                    "RoyuH": {
+                      "content": "С какого возраста можно заниматься?",
+                      "fontFamily": "Rajdhani",
+                      "fontWeight": "700"
+                    },
+                    "euTpe": {
+                      "name": "↓"
+                    },
+                    "C0v8C": {
+                      "content": "Мы принимаем детей от 4 лет. Программа адаптирована с учётом возраста.",
+                      "fontFamily": "Rajdhani"
+                    }
+                  }
+                },
+                {
+                  "id": "uIZGf",
+                  "type": "ref",
+                  "ref": "Ddn2r",
+                  "width": 800,
+                  "descendants": {
+                    "RoyuH": {
+                      "content": "Что нужно для первого занятия?",
+                      "fontFamily": "Rajdhani",
+                      "fontWeight": "700"
+                    },
+                    "C0v8C": {
+                      "content": "Удобная спортивная форма, сменная обувь или носки. Всё оборудование предоставляется.",
+                      "fontFamily": "Rajdhani"
+                    }
+                  }
+                },
+                {
+                  "id": "hOKFT",
+                  "type": "ref",
+                  "ref": "Ddn2r",
+                  "width": 800,
+                  "descendants": {
+                    "RoyuH": {
+                      "content": "Как записаться на пробное занятие?",
+                      "fontFamily": "Rajdhani",
+                      "fontWeight": "700"
+                    },
+                    "C0v8C": {
+                      "content": "Свяжитесь с нами по телефону. Пробное занятие бесплатное.",
+                      "fontFamily": "Rajdhani"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pbyhU",
+          "type": "ref",
+          "ref": "xPhTK",
+          "y": 3624,
+          "width": "fill_container",
+          "height": "fit_content",
+          "x": 0
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "Eexzc",
+      "x": 1500,
+      "y": 1500,
+      "name": "About Page",
+      "width": 1440,
+      "fill": "#09090b",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "7aCwm",
+          "type": "ref",
+          "ref": "szagI"
+        },
+        {
+          "type": "frame",
+          "id": "Y3GpN",
+          "name": "aboutContent",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 64,
+          "padding": [
+            80,
+            48
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "DoOa8",
+              "name": "aboutHero",
+              "width": "fill_container",
+              "gap": 64,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "hLS6s",
+                  "name": "aboutTextPart",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "XUYQN",
+                      "fill": "#ffffff",
+                      "content": "О нашей студии",
+                      "fontFamily": "Orbitron",
+                      "fontSize": 48,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "lDkYj",
+                      "fill": "#a1a1aa",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Цирковая студия — это место, где дети от 4 лет знакомятся с цирковым искусством в безопасной и дружелюбной атмосфере.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "Rajdhani",
+                      "fontSize": 18,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "U9y87",
+                      "fill": "#a1a1aa",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Наши тренеры — профессиональные артисты цирка и гимнасты с многолетним опытом работы с детьми.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "Rajdhani",
+                      "fontSize": 18,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "nr5d8",
+                  "name": "aboutStatsPart",
+                  "width": 300,
+                  "layout": "vertical",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "id": "XBCbM",
+                      "type": "ref",
+                      "ref": "upYfp",
+                      "descendants": {
+                        "FMvwi": {
+                          "content": "10+"
+                        },
+                        "3keer": {
+                          "content": "лет опыта работы"
+                        }
+                      }
+                    },
+                    {
+                      "id": "WitnD",
+                      "type": "ref",
+                      "ref": "upYfp",
+                      "descendants": {
+                        "FMvwi": {
+                          "content": "4+"
+                        },
+                        "3keer": {
+                          "content": "года минимальный возраст"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "zZY8C",
+              "name": "aboutPrinciples",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 32,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "bL8rS",
+                  "fill": "#00d8d8",
+                  "content": "Наши принципы",
+                  "fontFamily": "Inter",
+                  "fontSize": 32,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "frame",
+                  "id": "PWEmG",
+                  "name": "principlesGrid",
+                  "width": "fill_container",
+                  "gap": 32,
+                  "children": [
+                    {
+                      "id": "O9Zfq",
+                      "type": "ref",
+                      "ref": "VFpDA",
+                      "width": "fill_container",
+                      "descendants": {
+                        "CPGDM": {
+                          "content": "🛡️"
+                        },
+                        "8y3PM": {
+                          "content": "Безопасность"
+                        },
+                        "wXLX5": {
+                          "content": "Соблюдение техники безопасности, страховка на каждом уроке."
+                        }
+                      }
+                    },
+                    {
+                      "id": "1yvr3",
+                      "type": "ref",
+                      "ref": "VFpDA",
+                      "width": "fill_container",
+                      "descendants": {
+                        "CPGDM": {
+                          "content": "🎯"
+                        },
+                        "8y3PM": {
+                          "content": "Индивидуальный подход"
+                        },
+                        "wXLX5": {
+                          "content": "Небольшие группы позволяют уделять внимание каждому ребёнку."
+                        }
+                      }
+                    },
+                    {
+                      "id": "vJng2",
+                      "type": "ref",
+                      "ref": "VFpDA",
+                      "width": "fill_container",
+                      "descendants": {
+                        "CPGDM": {
+                          "content": "📈"
+                        },
+                        "8y3PM": {
+                          "content": "Постепенное развитие"
+                        },
+                        "wXLX5": {
+                          "content": "Программа строится от простого к сложному, без спешки."
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NduwA",
+          "type": "ref",
+          "ref": "xPhTK"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "2G5E7",
+      "x": 3000,
+      "y": 1500,
+      "name": "Trainers Page",
+      "width": 1440,
+      "fill": "#09090b",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "HpesA",
+          "type": "ref",
+          "ref": "szagI"
+        },
+        {
+          "type": "frame",
+          "id": "4Tqcz",
+          "name": "trainersContent",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": [
+            80,
+            48
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "x2LeT",
+              "fill": "#ffffff",
+              "content": "Наши тренеры",
+              "fontFamily": "Inter",
+              "fontSize": 40,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "RVyqz",
+              "name": "trainersGrid",
+              "width": "fill_container",
+              "gap": 32,
+              "children": [
+                {
+                  "id": "u5bHH",
+                  "type": "ref",
+                  "ref": "eJEqm",
+                  "descendants": {
+                    "3Lhiq": {
+                      "content": "Анна Петрова"
+                    },
+                    "IMgSe": {
+                      "content": "Воздушная гимнастика"
+                    },
+                    "MozLy": {
+                      "content": "Мастер спорта по художественной гимнастике. 12 лет опыта работы с детьми. Специализация: воздушные полотна и кольца."
+                    }
+                  }
+                },
+                {
+                  "id": "jgql6",
+                  "type": "ref",
+                  "ref": "eJEqm",
+                  "descendants": {
+                    "3Lhiq": {
+                      "content": "Михаил Козлов"
+                    },
+                    "IMgSe": {
+                      "content": "Акробатика"
+                    },
+                    "MozLy": {
+                      "content": "Кандидат в мастера спорта по спортивной акробатике. 8 лет преподавания. Специализируется на групповой акробатике."
+                    }
+                  }
+                },
+                {
+                  "id": "WRmTT",
+                  "type": "ref",
+                  "ref": "eJEqm",
+                  "descendants": {
+                    "3Lhiq": {
+                      "content": "Елена Волкова"
+                    },
+                    "IMgSe": {
+                      "content": "Баланс и растяжка"
+                    },
+                    "MozLy": {
+                      "content": "Выпускница МГАХ. 10 лет в цирковом искусстве. Ведёт занятия по пластике, растяжке и основам эквилибра."
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "W5050",
+          "type": "ref",
+          "ref": "xPhTK"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "vGp6O",
+      "x": 4500,
+      "y": 1500,
+      "name": "Prices Page",
+      "width": 1440,
+      "fill": "#09090b",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "xnNJN",
+          "type": "ref",
+          "ref": "szagI",
+          "width": "fill_container",
+          "height": 80,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "type": "frame",
+          "id": "tkPu6",
+          "name": "pricesContent",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": [
+            80,
+            48
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "p9zpt",
+              "fill": "#ffffff",
+              "content": "Цены на занятия",
+              "fontFamily": "Inter",
+              "fontSize": 40,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "47T1M",
+              "name": "pricesGrid",
+              "width": "fill_container",
+              "gap": 32,
+              "children": [
+                {
+                  "id": "mCMYG",
+                  "type": "ref",
+                  "ref": "f1ruW",
+                  "width": "fill_container",
+                  "name": "c1",
+                  "descendants": {
+                    "UomN4": {
+                      "content": "РАЗОВОЕ",
+                      "fontFamily": "Jura"
+                    },
+                    "4qKQx": {
+                      "content": "Для тех, кто хочет попробовать",
+                      "fontFamily": "Exo 2"
+                    },
+                    "T3acZ": {
+                      "content": "800 ₽",
+                      "fontFamily": "JetBrains Mono"
+                    },
+                    "ZUcND": {
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "XEAUx",
+                          "fill": "#a1a1aa",
+                          "content": "✓ Доступ ко всем направлениям",
+                          "fontFamily": "Exo 2",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "RHmhC",
+                          "fill": "#a1a1aa",
+                          "content": "✓ Продолжительность 60 мин",
+                          "fontFamily": "Exo 2",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "7wPCR",
+                          "fill": "#a1a1aa",
+                          "content": "✓ Индивидуальный подход",
+                          "fontFamily": "Exo 2",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "RpuOa",
+                  "type": "ref",
+                  "ref": "f1ruW",
+                  "width": "fill_container",
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#ff9d00",
+                    "blur": 32
+                  },
+                  "name": "c2",
+                  "descendants": {
+                    "UomN4": {
+                      "content": "8 ЗАНЯТИЙ",
+                      "fontFamily": "Jura"
+                    },
+                    "4qKQx": {
+                      "content": "Оптимальный выбор для начала",
+                      "fontFamily": "Exo 2"
+                    },
+                    "T3acZ": {
+                      "content": "5 600 ₽",
+                      "fontFamily": "JetBrains Mono"
+                    },
+                    "ZUcND": {
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "YT8QF",
+                          "fill": "#ff9d00",
+                          "content": "✓ Скидка 12%",
+                          "fontFamily": "Exo 2",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "wB5an",
+                          "fill": "#a1a1aa",
+                          "content": "✓ Срок действия 30 дней",
+                          "fontFamily": "Exo 2",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "0NgCV",
+                          "fill": "#a1a1aa",
+                          "content": "✓ Заморозка на 7 дней",
+                          "fontFamily": "Exo 2",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    "fME2D": {
+                      "id": "zLTHL",
+                      "type": "ref",
+                      "ref": "Tmi7b",
+                      "stroke": {
+                        "thickness": 0
+                      },
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#ff9d00",
+                        "blur": 16
+                      },
+                      "descendants": {
+                        "eWBHY": {
+                          "content": "Купить",
+                          "fill": "#09090b",
+                          "fontFamily": "Jura"
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "8n6Wn",
+                  "type": "ref",
+                  "ref": "f1ruW",
+                  "width": "fill_container",
+                  "name": "c3",
+                  "descendants": {
+                    "UomN4": {
+                      "content": "12 ЗАНЯТИЙ",
+                      "fontFamily": "Jura"
+                    },
+                    "4qKQx": {
+                      "content": "Для регулярных тренировок",
+                      "fontFamily": "Exo 2"
+                    },
+                    "T3acZ": {
+                      "content": "7 200 ₽",
+                      "fontFamily": "JetBrains Mono"
+                    },
+                    "ZUcND": {
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "LXy1J",
+                          "fill": "#a1a1aa",
+                          "content": "✓ Скидка 25%",
+                          "fontFamily": "Exo 2",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "1jgJP",
+                          "fill": "#a1a1aa",
+                          "content": "✓ Срок действия 45 дней",
+                          "fontFamily": "Exo 2",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "6f48x",
+                          "fill": "#a1a1aa",
+                          "content": "✓ Заморозка на 14 дней",
+                          "fontFamily": "Exo 2",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "54RYK",
+          "type": "ref",
+          "ref": "xPhTK",
+          "width": "fill_container",
+          "height": "fit_content",
+          "x": 0,
+          "y": 708
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "nE4HD",
+      "x": 6000,
+      "y": 1500,
+      "name": "Videos Page",
+      "width": 1440,
+      "fill": "#09090b",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "BVs4C",
+          "type": "ref",
+          "ref": "szagI"
+        },
+        {
+          "type": "frame",
+          "id": "Qa2Uu",
+          "name": "videosContent",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": [
+            80,
+            48
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "xDhqh",
+              "fill": "#ffffff",
+              "content": "Видео выступлений",
+              "fontFamily": "Inter",
+              "fontSize": 40,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "Qb2WO",
+              "name": "videosGrid",
+              "width": "fill_container",
+              "gap": 32,
+              "children": [
+                {
+                  "id": "89ykD",
+                  "type": "ref",
+                  "ref": "iSeSr",
+                  "width": "fill_container",
+                  "descendants": {
+                    "uHn5V": {
+                      "content": "Воздушная гимнастика"
+                    },
+                    "nsqLW": {
+                      "content": "Выступление на городском фестивале весной 2024."
+                    }
+                  }
+                },
+                {
+                  "id": "7vi0s",
+                  "type": "ref",
+                  "ref": "iSeSr",
+                  "width": "fill_container",
+                  "descendants": {
+                    "uHn5V": {
+                      "content": "Акробатическая группа"
+                    },
+                    "nsqLW": {
+                      "content": "Сольный номер воспитанников студии."
+                    }
+                  }
+                },
+                {
+                  "id": "IoLew",
+                  "type": "ref",
+                  "ref": "iSeSr",
+                  "width": "fill_container",
+                  "descendants": {
+                    "uHn5V": {
+                      "content": "Открытый урок"
+                    },
+                    "nsqLW": {
+                      "content": "Демонстрация навыков начинающих групп."
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ob3nE",
+          "type": "ref",
+          "ref": "xPhTK"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "3bHCr",
+      "x": 7500,
+      "y": 1500,
+      "name": "FAQ Page",
+      "width": 1440,
+      "fill": "#09090b",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "mu3dO",
+          "type": "ref",
+          "ref": "szagI"
+        },
+        {
+          "type": "frame",
+          "id": "JjSMi",
+          "name": "faqContent",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": [
+            80,
+            48
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "fg2RK",
+              "fill": "#ffffff",
+              "content": "Частые вопросы",
+              "fontFamily": "Inter",
+              "fontSize": 40,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "peWm2",
+              "name": "faqList",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "YGd5X",
+                  "type": "ref",
+                  "ref": "Ddn2r",
+                  "width": 800,
+                  "descendants": {
+                    "RoyuH": {
+                      "content": "С какого возраста можно заниматься?"
+                    },
+                    "C0v8C": {
+                      "content": "Мы принимаем детей от 4 лет. Программа адаптирована с учётом возраста."
+                    }
+                  }
+                },
+                {
+                  "id": "9F4Ot",
+                  "type": "ref",
+                  "ref": "Ddn2r",
+                  "width": 800,
+                  "descendants": {
+                    "RoyuH": {
+                      "content": "Что нужно для первого занятия?"
+                    },
+                    "C0v8C": {
+                      "content": "Удобная спортивная форма, сменная обувь или носки. Всё оборудование предоставляется."
+                    }
+                  }
+                },
+                {
+                  "id": "zzQm0",
+                  "type": "ref",
+                  "ref": "Ddn2r",
+                  "width": 800,
+                  "descendants": {
+                    "RoyuH": {
+                      "content": "Как записаться на пробное занятие?"
+                    },
+                    "C0v8C": {
+                      "content": "Свяжитесь с нами по телефону. Пробное занятие бесплатное."
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "6EC3l",
+          "type": "ref",
+          "ref": "xPhTK"
+        }
+      ]
+    }
+  ]
+}

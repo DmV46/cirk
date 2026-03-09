@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { ThemeToggle } from "./ThemeToggle";
+import { ThemeToggle } from "@/features/theme/ui/ThemeToggle";
+import styles from "./Header.module.css";
 
 const navLinks = [
   { href: "/", label: "Главная" },
@@ -19,18 +20,18 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="header">
-      <div className="container header-inner">
-        <Link href="/" className="header-logo">
-          🎪 Цирковая студия
+    <header className={styles.header}>
+      <div className={`container ${styles.headerInner}`}>
+        <Link href="/" className={styles.headerLogo}>
+          Объединенная цирковая студия
         </Link>
 
-        <nav className="nav-desktop">
+        <nav className={styles.navDesktop}>
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`nav-link ${pathname === link.href ? "active" : ""}`}
+              className={`${styles.navLink} ${pathname === link.href ? styles.active : ""}`}
             >
               {link.label}
             </Link>
@@ -38,12 +39,12 @@ export function Header() {
           <ThemeToggle />
         </nav>
 
-        <div className="nav-mobile-wrapper">
+        <div className={styles.navMobileWrapper}>
           <ThemeToggle />
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="menu-btn"
+            className={styles.menuBtn}
             aria-label="Открыть меню"
           >
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -68,15 +69,15 @@ export function Header() {
       </div>
 
       {mobileMenuOpen && (
-        <nav className="nav-mobile">
-          <div className="nav-mobile-inner">
+        <nav className={styles.navMobile}>
+          <div className={styles.navMobileInner}>
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`nav-mobile-link ${
-                  pathname === link.href ? "active" : ""
+                className={`${styles.navMobileLink} ${
+                  pathname === link.href ? styles.active : ""
                 }`}
               >
                 {link.label}

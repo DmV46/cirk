@@ -1,0 +1,39 @@
+.themeToggle {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--slate-600);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.themeToggle:hover {
+  background: var(--slate-100);
+  color: var(--teal-neon);
+}
+
+:global(.dark) .themeToggle {
+  color: var(--slate-300);
+}
+
+:global(.dark) .themeToggle:hover {
+  background: var(--slate-800);
+  color: var(--teal-neon);
+}
+
+.themeToggle svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.themeToggleSkeleton {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.5rem;
+  background: var(--slate-200);
+}
+
+:global(.dark) .themeToggleSkeleton {
+  background: var(--slate-700);
+}

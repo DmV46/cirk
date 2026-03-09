@@ -1,0 +1,43 @@
+.section {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--section-glow-bg) 15%,
+    var(--section-glow-bg) 85%,
+    transparent 100%
+  );
+}
+
+.aboutHero {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+@media (min-width: 1024px) {
+  .aboutHero {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.aboutText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.textBlock {
+  font-size: 1.25rem;
+  color: var(--muted-fg);
+  line-height: 1.6;
+}
+
+.aboutStats {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+@media (min-width: 1024px) { .aboutStats { width: 300px; } }
