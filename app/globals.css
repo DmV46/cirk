@@ -1,13 +1,13 @@
 /* ========== CSS Variables ========== */
 :root {
-  --background: #ffffff;
-  --foreground: #09090b;
-  --muted: #f1f5f9;
-  --muted-fg: #64748b;
-  --card: rgba(255, 255, 255, 0.9);
-  --card-fg: #09090b;
-  --border: rgba(0, 180, 180, 0.4);
-  --border-muted: rgba(0, 180, 180, 0.2);
+  --background: #f8fafc;
+  --foreground: #020617;
+  --muted: #e2e8f0;
+  --muted-fg: #334155;
+  --card: #ffffff;
+  --card-fg: #0f172a;
+  --border: rgba(0, 153, 153, 0.5);
+  --border-muted: rgba(0, 153, 153, 0.2);
   --amber-50: #fffbeb;
   --amber-100: #fef3c7;
   --amber-400: #ff9d00;
@@ -17,37 +17,40 @@
   --amber-800: #cc5200;
   --amber-950: #451a03;
   
-  /* Cyberpunk neon colors */
-  --teal-neon: #00b4b4;
-  --teal-neon-glow: rgba(0, 180, 180, 0.3);
-  --orange-neon: #ff8800;
-  --orange-neon-glow: rgba(255, 136, 0, 0.3);
-  --red-neon: #e65c00;
-  --red-neon-glow: rgba(230, 92, 0, 0.3);
-  --purple-neon: #b400d8;
-  --purple-neon-glow: rgba(180, 0, 216, 0.3);
+  /* Cyberpunk neon colors - darker and more intense for light mode */
+  --teal-neon: #008080;
+  --teal-neon-glow: rgba(0, 128, 128, 0.4);
+  --orange-neon: #d96600;
+  --orange-neon-glow: rgba(217, 102, 0, 0.4);
+  --red-neon: #cc2900;
+  --red-neon-glow: rgba(204, 41, 0, 0.4);
+  --purple-neon: #9900cc;
+  --purple-neon-glow: rgba(153, 0, 204, 0.4);
 
-  --marquee-bg: rgba(255, 255, 255, 0.4);
-  --marquee-border: rgba(0, 180, 180, 0.3);
-  --section-glow-bg: rgba(0, 180, 180, 0.05);
-  --hero-gradient-center: rgba(0, 180, 180, 0.15);
+  --marquee-bg: #ffffff;
+  --marquee-border: rgba(0, 128, 128, 0.4);
+  --section-glow-bg: rgba(0, 128, 128, 0.08);
+  --hero-gradient-center: rgba(0, 128, 128, 0.2);
   
-  --teal-neon-bg: rgba(0, 180, 180, 0.06);
-  --orange-neon-bg: rgba(255, 136, 0, 0.06);
-  --red-neon-bg: rgba(230, 92, 0, 0.06);
-  --purple-neon-bg: rgba(180, 0, 216, 0.06);
+  --teal-neon-bg: rgba(0, 128, 128, 0.08);
+  --orange-neon-bg: rgba(217, 102, 0, 0.08);
+  --red-neon-bg: rgba(204, 41, 0, 0.08);
+  --purple-neon-bg: rgba(153, 0, 204, 0.08);
   
-  --stat-card-start: rgba(255, 255, 255, 1);
-  --stat-card-end: rgba(255, 136, 0, 0.2);
-  --stat-card-border: rgba(255, 136, 0, 0.4);
+  --stat-card-start: #ffffff;
+  --stat-card-end: rgba(217, 102, 0, 0.15);
+  --stat-card-border: rgba(217, 102, 0, 0.5);
   
-  --faq-card-bg: rgba(255, 255, 255, 0.9);
-  --faq-card-border: rgba(255, 136, 0, 0.4);
-  --faq-card-hover: rgba(255, 136, 0, 0.1);
+  --faq-card-bg: #ffffff;
+  --faq-card-border: rgba(217, 102, 0, 0.5);
+  --faq-card-hover: rgba(217, 102, 0, 0.1);
   
-  --btn-secondary-hover: rgba(0, 180, 180, 0.1);
-  --header-bg: rgba(255, 255, 255, 0.9);
-  --footer-bg: #f8fafc;
+  --btn-secondary-hover: rgba(0, 128, 128, 0.1);
+  --header-bg: rgba(255, 255, 255, 0.95);
+  --footer-bg: #e2e8f0;
+  
+  --hero-video-opacity: 0.15;
+  --hero-video-blend: multiply;
 
   --slate-100: #f1f5f9;
   --slate-200: #e2e8f0;
@@ -62,6 +65,9 @@
 }
 
 .dark {
+  --hero-video-opacity: 0.4;
+  --hero-video-blend: screen;
+
   --background: #09090b;
   --foreground: #f8fafc;
   --muted: #27272a;
@@ -122,6 +128,13 @@
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {
@@ -206,46 +219,16 @@ body {
 .text-center { text-align: center; }
 .text-muted { color: var(--muted-fg); }
 
-/* Marquee */
-.marquee-container {
-  width: 100%;
-  overflow: hidden;
-  background: var(--marquee-bg);
-  backdrop-filter: blur(8px);
-  padding: 1rem 0;
-  border-top: 1px solid var(--marquee-border);
-  border-bottom: 1px solid var(--marquee-border);
-  box-shadow: 0 0 20px var(--teal-neon-glow);
-  position: relative;
-  z-index: 10;
-  display: flex;
-}
-
-.marquee-content {
-  display: flex;
-  white-space: nowrap;
-  animation: marquee-scroll 25s linear infinite;
-}
-
-.marquee-text {
-  font-family: var(--font-accent);
-  font-weight: 800;
-  font-size: 1.125rem;
-  letter-spacing: 2px;
-}
-
-.marquee-separator {
-  color: var(--muted-fg);
-  margin: 0 2rem;
-  font-size: 1rem;
-  opacity: 0.5;
-}
-
-@keyframes marquee-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
 @keyframes blink {
   50% { border-color: transparent; }
+}
+
+/* Блик по карточке — как у блока «Безопасность прежде всего» (AboutStudio) */
+@keyframes cirk-cyber-scan {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
 }

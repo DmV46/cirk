@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "./TrainerCard.module.css";
 
 interface TrainerCardProps {

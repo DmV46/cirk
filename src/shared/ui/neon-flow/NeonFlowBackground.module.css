@@ -1,0 +1,26 @@
+/**
+ * Neon Flow (YASHVW25 / 21st.dev) — WebGL-трубки на весь вьюпорт, под контентом.
+ */
+.wrap {
+  position: fixed;
+  inset: 0;
+  /* Над контентом страницы, под шапкой (z-index 50+) и мобильным меню */
+  z-index: 35;
+  pointer-events: none;
+  overflow: hidden;
+  mix-blend-mode: screen;
+  opacity: 0.38;
+}
+
+.canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wrap {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

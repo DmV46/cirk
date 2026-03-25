@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useLayoutEffect, useRef } from "react";
 
 interface TypewriterTextProps {
   text: string;
@@ -14,7 +14,21 @@ export function TypewriterText({ text, delay = 0, speed = 20, className = "" }: 
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const inView = () => {
+      const r = el.getBoundingClientRect();
+      const vh = window.innerHeight;
+      return r.top < vh && r.bottom > 0;
+    };
+
+    if (inView()) {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -22,9 +36,9 @@ export function TypewriterText({ text, delay = 0, speed = 20, className = "" }: 
           observer.disconnect();
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
-    if (ref.current) observer.observe(ref.current);
+    observer.observe(el);
     return () => observer.disconnect();
   }, []);
 

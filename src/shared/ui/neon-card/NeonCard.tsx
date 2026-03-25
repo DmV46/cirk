@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import styles from "./NeonCard.module.css";
 
 interface NeonCardProps {
@@ -8,11 +7,14 @@ interface NeonCardProps {
 }
 
 export function NeonCard({ title, description, colorClass }: NeonCardProps) {
-  // Map prop value to module class
-  const colorModuleClass = colorClass === "neon-card-orange" ? styles.neonCardOrange :
-                           colorClass === "neon-card-teal" ? styles.neonCardTeal :
-                           colorClass === "neon-card-red" ? styles.neonCardRed :
-                           styles.neonCardPurple;
+  const colorModuleClass =
+    colorClass === "neon-card-orange"
+      ? styles.neonCardOrange
+      : colorClass === "neon-card-teal"
+        ? styles.neonCardTeal
+        : colorClass === "neon-card-red"
+          ? styles.neonCardRed
+          : styles.neonCardPurple;
 
   return (
     <div className={`${styles.neonCard} ${colorModuleClass}`}>

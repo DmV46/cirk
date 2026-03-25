@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import styles from "./StatCard.module.css";
 
 interface StatCardProps {

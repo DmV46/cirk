@@ -27,9 +27,18 @@ export function Principles() {
             </p>
           </div>
           <div className={styles.aboutStats}>
-            <StatCard number="5+" description="Лет опыта работы с детьми" />
-            <StatCard number="300+" description="Счастливых учеников" />
-            <StatCard number="15+" description="Наград на фестивалях" />
+            <StatCard
+              number="5+"
+              description="Лет опыта работы с детьми"
+            />
+            <StatCard
+              number="300+"
+              description="Счастливых учеников"
+            />
+            <StatCard
+              number="15+"
+              description="Наград на фестивалях"
+            />
           </div>
         </div>
       </div>

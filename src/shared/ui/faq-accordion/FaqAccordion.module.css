@@ -8,9 +8,39 @@
 
 .faqItem {
   border-radius: 12px;
-  border: 1px solid var(--faq-card-border);
   background: var(--faq-card-bg);
   overflow: hidden;
+  position: relative;
+  border: 1px solid var(--teal-neon);
+  box-shadow: 0 0 24px var(--teal-neon-glow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faqItem::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--section-glow-bg),
+    transparent
+  );
+  animation: cirk-cyber-scan 3s infinite linear;
+  pointer-events: none;
+}
+
+.faqItem > * {
+  position: relative;
+  z-index: 1;
+}
+
+.faqItem:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 40px var(--teal-neon-glow), inset 0 0 20px var(--teal-neon-bg);
 }
 
 .faqTrigger {

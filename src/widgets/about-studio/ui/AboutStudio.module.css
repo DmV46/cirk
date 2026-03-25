@@ -11,14 +11,88 @@
 .contentWrapper {
   max-width: 800px;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
 }
 
-.description {
+.text {
+  margin-bottom: 2rem;
+}
+
+.lead {
   font-size: 1.25rem;
   color: var(--muted-fg);
   line-height: 1.6;
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+.paragraph {
+  font-size: 1.05rem;
+  color: var(--muted-fg);
+  line-height: 1.7;
+  margin: 0 0 1rem;
+}
+
+.callout {
+  font-size: 1.1rem;
+  color: var(--card-fg);
+  line-height: 1.7;
+  margin: 0 0 1.25rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--orange-neon);
+  border-radius: 12px;
+  background: linear-gradient(180deg, var(--orange-neon-bg), transparent);
+  box-shadow: 0 0 18px var(--orange-neon-glow);
+}
+
+.emphasis {
+  color: var(--orange-neon);
+  text-shadow: 0 0 10px var(--orange-neon-glow);
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.listItem {
+  color: var(--muted-fg);
+  line-height: 1.6;
+}
+
+.contacts {
+  margin-top: 1.25rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card);
+  box-shadow: 0 0 18px var(--teal-neon-glow);
+}
+
+.contactRow {
+  color: var(--muted-fg);
+  line-height: 1.6;
+}
+
+.contactRow + .contactRow {
+  margin-top: 0.5rem;
+}
+
+.contactLabel {
+  color: var(--card-fg);
+  font-weight: 600;
+}
+
+.phone {
+  color: var(--teal-neon);
+  text-decoration: none;
+  text-shadow: 0 0 10px var(--teal-neon-glow);
+}
+
+.phone:hover {
+  text-decoration: underline;
 }
 
 .securityBox {
@@ -50,13 +124,8 @@
     var(--section-glow-bg),
     transparent
   );
-  animation: cyber-scan 3s infinite linear;
+  animation: cirk-cyber-scan 3s infinite linear;
   pointer-events: none;
-}
-
-@keyframes cyber-scan {
-  0% { left: -100%; }
-  100% { left: 100%; }
 }
 
 .securityTitle {

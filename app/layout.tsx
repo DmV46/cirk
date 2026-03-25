@@ -3,6 +3,7 @@ import { Jura, Exo_2, JetBrains_Mono } from "next/font/google";
 import { Header } from "@/widgets/header/ui/Header";
 import { Footer } from "@/widgets/footer/ui/Footer";
 import { ThemeProvider } from "@/app/providers/ThemeProvider";
+import { NeonFlowBackground } from "@/shared/ui/neon-flow/NeonFlowBackground";
 import "./globals.css";
 
 const fontPrimary = Jura({
@@ -35,11 +36,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" suppressHydrationWarning>
+    <html lang="ru" className="dark" suppressHydrationWarning>
       <body
         className={`${fontPrimary.variable} ${fontSecondary.variable} ${fontAccent.variable} layout-root`}
       >
         <ThemeProvider>
+          <NeonFlowBackground />
           <Header />
           <main className="layout-main">{children}</main>
           <Footer />

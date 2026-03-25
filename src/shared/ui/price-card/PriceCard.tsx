@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import styles from "./PriceCard.module.css";
 
 interface PriceCardProps {
@@ -9,9 +8,17 @@ interface PriceCardProps {
   highlight?: boolean;
 }
 
-export function PriceCard({ name, desc, amount, features, highlight }: PriceCardProps) {
+export function PriceCard({
+  name,
+  desc,
+  amount,
+  features,
+  highlight,
+}: PriceCardProps) {
   return (
-    <div className={styles.priceCard} style={highlight ? { transform: 'scale(1.05)' } : {}}>
+    <div
+      className={`${styles.priceCard} ${highlight ? styles.priceCardHighlight : ""}`}
+    >
       <h3 className={styles.priceName}>{name}</h3>
       <p className={styles.priceDesc}>{desc}</p>
       <div className={styles.priceAmount}>{amount}</div>
@@ -22,8 +29,9 @@ export function PriceCard({ name, desc, amount, features, highlight }: PriceCard
           </li>
         ))}
       </ul>
-      <button 
+      <button
         className={`${styles.btn} ${highlight ? styles.btnHighlight : styles.btnDefault}`}
+        type="button"
       >
         Купить
       </button>
