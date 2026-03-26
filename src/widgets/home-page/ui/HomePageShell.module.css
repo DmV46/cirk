@@ -1,0 +1,117 @@
+.root {
+  position: relative;
+}
+
+/* Фото + круги — закреплены к вьюпорту; контент скроллится поверх */
+.fixedBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  transform: translateZ(0);
+}
+
+.fixedBackdropPhoto {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: #1a0508;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.fixedBackdropCircles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.magicCircleFixed {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* Бывшие слои Hero — поверх кругов */
+.fixedBackdropGradient {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 100% 80% at 50% 20%, rgba(0, 190, 202, 0.14) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 60% at 80% 60%, rgba(255, 169, 38, 0.1) 0%, transparent 50%),
+    linear-gradient(
+      135deg,
+      rgba(8, 6, 10, 0.72) 0%,
+      rgba(3, 3, 5, 0.78) 45%,
+      rgba(10, 8, 12, 0.74) 100%
+    );
+}
+
+.fixedBackdropPulse {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.fixedBackdropPulseRadial {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(120, 120, 130, 0.5) 0%,
+    transparent 55%
+  );
+  animation: homeHeroPulse 4s ease-in-out infinite;
+}
+
+@keyframes homeHeroPulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.04);
+  }
+}
+
+.fixedBackdropRadialGlow {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 169, 38, 0.2) 0%,
+    rgba(0, 190, 202, 0.1) 40%,
+    transparent 70%
+  );
+}
+
+.fixedBackdropBottomFade {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 45%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}

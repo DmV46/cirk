@@ -1,9 +1,63 @@
-.featuresGrid {
-  display: grid;
-  gap: 2rem;
-  margin-top: 3rem;
+.section {
+  position: relative;
+  overflow: visible;
 }
 
-@media (min-width: 768px) {
-  .featuresGrid { grid-template-columns: repeat(2, 1fr); }
+@keyframes directionCardDrift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  20% {
+    transform: translate3d(3px, -5px, 0) rotate(0.4deg);
+  }
+  40% {
+    transform: translate3d(-2px, 3px, 0) rotate(-0.3deg);
+  }
+  60% {
+    transform: translate3d(-4px, -4px, 0) rotate(0.25deg);
+  }
+  80% {
+    transform: translate3d(2px, 2px, 0) rotate(-0.2deg);
+  }
+}
+
+.cardFloat {
+  animation: directionCardDrift 9s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cardFloat {
+    animation: none;
+  }
+}
+
+.featuresGrid {
+  display: grid;
+  gap: 1.75rem;
+  margin-top: 3rem;
+  grid-template-columns: 1fr;
+  align-items: start;
+  overflow: visible;
+  position: relative;
+}
+
+@media (min-width: 560px) {
+  .featuresGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+}
+
+.cardWrap {
+  min-width: 0;
+  align-self: start;
+  position: relative;
+  overflow: visible;
+  z-index: 0;
+}
+
+.cardWrap:has([data-expanded="true"]) {
+  z-index: 40;
 }

@@ -1,142 +1,163 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { useMemo } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import styles from "./Hero.module.css";
 
-const CIRCLE_COUNT = 25;
-const ORANGE = "#ffa926";
-const TEAL = "#00beca";
+/** Характерный «спокойный» ease из премиальных лендингов (в духе Digital Serenity) */
+const serenityEase = [0.16, 1, 0.3, 1] as const;
 
-/** Детерминированный RNG — одинаковый SSR/CSR, без hydration mismatch */
-function mulberry32(seed: number) {
-  let a = seed;
-  return function rnd() {
-    let t = (a += 0x6d2b79f5);
-    t = Math.imul(t ^ (t >>> 15), t | 1);
-    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+const wordReveal = {
+  hidden: { opacity: 0, filter: "blur(12px)" },
+  visible: {
+    opacity: 1,
+    filter: "blur(0px)",
+    transition: { duration: 0.9, ease: serenityEase },
+  },
+};
+
+const actionsContainerVariants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.12, delayChildren: 0.9 },
+  },
+};
+
+const actionsContainerInstant = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0, delayChildren: 0 } },
+};
+
+const buttonItemVariants = {
+  hidden: { opacity: 0, y: 20, filter: "blur(8px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.95, ease: serenityEase },
+  },
+};
+
+const buttonItemInstant = {
+  hidden: { opacity: 1, y: 0, scale: 1 },
+  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0 } },
+};
+
+type SerenityWordsProps = {
+  level: "h1" | "h2";
+  text: string;
+  className: string;
+  wordClassName: string;
+  ariaLabel: string;
+  stagger: number;
+  delayChildren: number;
+  reduceMotion: boolean;
+};
+
+function SerenityWords({
+  level,
+  text,
+  className,
+  wordClassName,
+  ariaLabel,
+  stagger,
+  delayChildren,
+  reduceMotion,
+}: SerenityWordsProps) {
+  const words = text.split(/\s+/).filter(Boolean);
+  const MotionTag = level === "h1" ? motion.h1 : motion.h2;
+  const StaticTag = level === "h1" ? "h1" : "h2";
+
+  const listVariants = {
+    hidden: {},
+    visible: {
+      transition: { staggerChildren: stagger, delayChildren },
+    },
   };
-}
 
-function buildMagicCircles(seed: number) {
-  const rnd = mulberry32(seed);
-  const colors = [
-    ...Array(13).fill(ORANGE),
-    ...Array(12).fill(TEAL),
-  ];
-  for (let i = colors.length - 1; i > 0; i--) {
-    const j = Math.floor(rnd() * (i + 1));
-    [colors[i], colors[j]] = [colors[j], colors[i]];
+  if (reduceMotion) {
+    return (
+      <StaticTag className={className} aria-label={ariaLabel}>
+        {text}
+      </StaticTag>
+    );
   }
 
-  let keyframesCss = "";
-
-  const circles = Array.from({ length: CIRCLE_COUNT }, (_, i) => {
-    const id = i + 1;
-    const size = 150 + Math.floor(rnd() * 101);
-    const top = Math.floor(rnd() * 100);
-    const left = Math.floor(rnd() * 100);
-    const color = colors[i];
-    const opacity = (15 + Math.floor(rnd() * 6)) / 100;
-    const blur = 50 + Math.floor(rnd() * 21);
-    const duration = 20 + Math.floor(rnd() * 21);
-
-    const x1 = -60 + rnd() * 120;
-    const y1 = -60 + rnd() * 120;
-    const x2 = -60 + rnd() * 120;
-    const y2 = -60 + rnd() * 120;
-    const x3 = -60 + rnd() * 120;
-    const y3 = -60 + rnd() * 120;
-
-    const animName = `cirkHeroFloat${id}`;
-
-    keyframesCss += `
-@keyframes ${animName} {
-  0% { transform: translate(0, 0); }
-  25% { transform: translate(${x1.toFixed(2)}px, ${y1.toFixed(2)}px); }
-  50% { transform: translate(${x2.toFixed(2)}px, ${y2.toFixed(2)}px); }
-  75% { transform: translate(${x3.toFixed(2)}px, ${y3.toFixed(2)}px); }
-  100% { transform: translate(0, 0); }
-}
-.${animName} { animation: ${animName} ${duration}s ease-in-out infinite; }
-`;
-
-    return { id, size, top, left, color, opacity, blur, duration, animName };
-  });
-
-  return { circles, keyframesCss };
+  return (
+    <MotionTag
+      className={className}
+      aria-label={ariaLabel}
+      variants={listVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      {words.map((word, i) => (
+        <motion.span
+          key={`${i}-${word}`}
+          variants={wordReveal}
+          className={wordClassName}
+        >
+          {word}
+          {i < words.length - 1 ? "\u00A0" : null}
+        </motion.span>
+      ))}
+    </MotionTag>
+  );
 }
 
 export function Hero() {
-  const { circles, keyframesCss } = useMemo(() => buildMagicCircles(0x4c69725f4865726f), []);
+  const reduceMotion = useReducedMotion();
 
   return (
     <section className={styles.hero}>
-      <style dangerouslySetInnerHTML={{ __html: keyframesCss }} />
-
-      <div className={styles.heroBgPhoto} aria-hidden />
-
-      <div className={styles.gradientLayer} aria-hidden />
-
-      <div className={styles.pulseLayer} aria-hidden>
-        <div className={styles.pulseRadial} />
-      </div>
-
-      <div className={styles.radialGlow} aria-hidden />
-      <div className={styles.bottomFade} aria-hidden />
-
-      {circles.map((c) => (
-        <div
-          key={c.id}
-          className={`${styles.magicCircle} ${c.animName}`}
-          style={{
-            top: `${c.top}%`,
-            left: `${c.left}%`,
-            width: c.size,
-            height: c.size,
-            backgroundColor: c.color,
-            opacity: c.opacity,
-            filter: `blur(${c.blur}px)`,
-          }}
-        />
-      ))}
-
       <div className={styles.content}>
-        <motion.div
-          className={styles.motionWrap}
-          initial={false}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <motion.h1
+        <div className={styles.motionWrap}>
+          <SerenityWords
+            level="h1"
+            text="ОБЪЕДИНЕННАЯ ЦИРКОВАЯ СТУДИЯ"
             className={styles.title}
-            initial={false}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            aria-label="Объединенная цирковая студия"
-          >
-            ОБЪЕДИНЕННАЯ ЦИРКОВАЯ СТУДИЯ
-          </motion.h1>
+            wordClassName={styles.serenityWord}
+            ariaLabel="Объединенная цирковая студия"
+            stagger={0.11}
+            delayChildren={0.02}
+            reduceMotion={!!reduceMotion}
+          />
 
-          <motion.h2
+          <SerenityWords
+            level="h2"
+            text="БУДУЩЕЕ это ТЫ"
             className={styles.tagline}
-            initial={false}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            aria-label="Будущее это ты"
-          >
-            БУДУЩЕЕ это ТЫ
-          </motion.h2>
+            wordClassName={styles.serenityWord}
+            ariaLabel="Будущее это ты"
+            stagger={0.13}
+            delayChildren={0.38}
+            reduceMotion={!!reduceMotion}
+          />
+
+          <motion.div
+            className={styles.serenityLine}
+            aria-hidden
+            initial={reduceMotion ? false : { scaleX: 0, opacity: 0 }}
+            animate={{ scaleX: 1, opacity: 1 }}
+            transition={
+              reduceMotion
+                ? { duration: 0 }
+                : { duration: 1.08, delay: 0.52, ease: serenityEase }
+            }
+          />
 
           <motion.div
             className={styles.actions}
-            initial={false}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
+            variants={
+              reduceMotion ? actionsContainerInstant : actionsContainerVariants
+            }
+            initial={reduceMotion ? false : "hidden"}
+            animate="visible"
           >
             <motion.div
+              variants={
+                reduceMotion ? buttonItemInstant : buttonItemVariants
+              }
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className={styles.ctaMotion}
@@ -146,6 +167,9 @@ export function Hero() {
               </Link>
             </motion.div>
             <motion.div
+              variants={
+                reduceMotion ? buttonItemInstant : buttonItemVariants
+              }
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className={styles.ctaMotion}
@@ -155,7 +179,7 @@ export function Hero() {
               </Link>
             </motion.div>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

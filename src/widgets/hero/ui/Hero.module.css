@@ -1,110 +1,15 @@
+/* Декоративный фон — в HomePageFixedBackdrop (fixed); здесь только контент */
 .hero {
   position: relative;
   width: 100%;
   min-height: 100vh;
   min-height: 100dvh;
-  overflow: hidden;
-  background: #000;
-}
-
-.heroBgPhoto {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background-color: #1a0508;
-  background-image: url("/IMG_7178.JPG");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* Полупрозрачный оверлей поверх фото — читаемость текста + неоновый акцент */
-.gradientLayer {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background:
-    radial-gradient(ellipse 100% 80% at 50% 20%, rgba(0, 190, 202, 0.14) 0%, transparent 55%),
-    radial-gradient(ellipse 70% 60% at 80% 60%, rgba(255, 169, 38, 0.1) 0%, transparent 50%),
-    linear-gradient(
-      135deg,
-      rgba(8, 6, 10, 0.72) 0%,
-      rgba(3, 3, 5, 0.78) 45%,
-      rgba(10, 8, 12, 0.74) 100%
-    );
-}
-
-.pulseLayer {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  opacity: 0.12;
-  pointer-events: none;
-}
-
-.pulseRadial {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at center,
-    rgba(120, 120, 130, 0.5) 0%,
-    transparent 55%
-  );
-  animation: heroPulse 4s ease-in-out infinite;
-}
-
-@keyframes heroPulse {
-  0%,
-  100% {
-    opacity: 0.5;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.85;
-    transform: scale(1.04);
-  }
-}
-
-.radialGlow {
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  pointer-events: none;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(255, 169, 38, 0.2) 0%,
-    rgba(0, 190, 202, 0.1) 40%,
-    transparent 70%
-  );
-}
-
-.bottomFade {
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  pointer-events: none;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    transparent 45%,
-    rgba(0, 0, 0, 0.6) 100%
-  );
-}
-
-/* 25 кругов Magic: позиция + blur через inline, анимация — инжект в Hero.tsx */
-.magicCircle {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 2;
-  will-change: transform;
+  background: transparent;
 }
 
 .content {
   position: relative;
-  z-index: 10;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -135,17 +40,52 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: clamp(1.25rem, 3vw, 2rem);
+  container-type: inline-size;
+  container-name: hero;
+}
+
+/* Digital Serenity–style: слова по очереди, без переноса внутри токена */
+.serenityWord {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.serenityLine {
+  width: min(19rem, 58vw);
+  height: 1px;
+  margin: 0 auto;
+  flex-shrink: 0;
+  transform-origin: 50% 50%;
+  border: none;
+  border-radius: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 169, 38, 0.35) 18%,
+    rgba(0, 190, 202, 0.6) 50%,
+    rgba(255, 169, 38, 0.35) 82%,
+    transparent 100%
+  );
+  box-shadow:
+    0 0 12px rgba(0, 190, 202, 0.25),
+    0 0 20px rgba(255, 169, 38, 0.12);
 }
 
 /* cyber-text-orange / cyber-text-teal из Magic — пульсирующее неоновое свечение */
 .title {
   font-family: var(--font-primary);
   font-weight: 800;
-  font-size: clamp(1.75rem, 6vw, 4.5rem);
+  /* Узкий экран: укладываем одну строку в ширину блока (cqi от .motionWrap), чуть меньше крупный кегль */
+  font-size: clamp(0.62rem, 5.35cqi, 3.65rem);
   line-height: 1.08;
   letter-spacing: -0.02em;
   margin: 0;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  white-space: nowrap;
   color: #ffa926;
   text-shadow:
     0 0 10px rgba(255, 169, 38, 0.8),
@@ -159,7 +99,7 @@
 
 @media (min-width: 640px) {
   .title {
-    font-size: clamp(2.25rem, 6.5vw, 5rem);
+    font-size: clamp(0.85rem, 4.85cqi, 3.85rem);
   }
 }
 
