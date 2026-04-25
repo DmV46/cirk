@@ -57,7 +57,7 @@ export function NeonFlowBackground() {
           tubes: {
             colors: ["#00beca", "#ffa926", "#b400d8"],
             lights: {
-              intensity: 200,
+              intensity: 100,
               colors: ["#00d8d8", "#ff9d00", "#ffa926", "#c084fc"],
             },
           },
@@ -69,70 +69,100 @@ export function NeonFlowBackground() {
         }
         appRef.current = instance;
 
-        // The third-party effect follows pointer events; emulate a chaotic
-        // pointer path so motion is autonomous across the whole viewport.
+        // The effect follows pointer events. We drive a virtual cursor that
+        // continuously seeks random targets across the whole viewport.
         let x = window.innerWidth * 0.5;
         let y = window.innerHeight * 0.5;
-        let vx = (Math.random() - 0.5) * 6;
-        let vy = (Math.random() - 0.5) * 6;
-        let ax = 0;
-        let ay = 0;
+        let vx = 0;
+        let vy = 0;
+        let targetX = Math.random() * Math.max(window.innerWidth, 1);
+        let targetY = Math.random() * Math.max(window.innerHeight, 1);
+        let framesToRetarget = 0;
 
-        const jitter = () => (Math.random() - 0.5) * 0.18;
+        const isMobileOrTablet = () =>
+          typeof window !== "undefined" &&
+          window.matchMedia("(max-width: 1024px)").matches;
+
+        const pickNextTarget = () => {
+          const maxX = Math.max(window.innerWidth, 1);
+          const maxY = Math.max(window.innerHeight, 1);
+          targetX = Math.random() * maxX;
+          targetY = Math.random() * maxY;
+          const timeScale = isMobileOrTablet() ? 3 : 2;
+          // Desktop: ~5.6-10.4s, Mobile/Tablet: ~8.4-15.6s.
+          framesToRetarget = Math.floor((168 + Math.floor(Math.random() * 144)) * timeScale);
+        };
+
+        const emitVirtualPointer = (cx: number, cy: number) => {
+          const mouseEvt = new MouseEvent("mousemove", {
+            clientX: cx,
+            clientY: cy,
+            bubbles: true,
+          });
+          const pointerEvt = new PointerEvent("pointermove", {
+            clientX: cx,
+            clientY: cy,
+            pointerType: "mouse",
+            bubbles: true,
+          });
+
+          window.dispatchEvent(mouseEvt);
+          window.dispatchEvent(pointerEvt);
+          document.dispatchEvent(mouseEvt);
+          document.dispatchEvent(pointerEvt);
+          canvasRef.current?.dispatchEvent(mouseEvt);
+          canvasRef.current?.dispatchEvent(pointerEvt);
+        };
+
+        pickNextTarget();
 
         const step = () => {
           if (cancelled) return;
 
-          ax += jitter();
-          ay += jitter();
+          const maxX = Math.max(1, window.innerWidth);
+          const maxY = Math.max(1, window.innerHeight);
+          const dx = targetX - x;
+          const dy = targetY - y;
+          const dist = Math.hypot(dx, dy);
 
-          ax = Math.max(-1.2, Math.min(1.2, ax));
-          ay = Math.max(-1.2, Math.min(1.2, ay));
+          // Spring-like seek + damping gives "mouse-like" smooth motion.
+          const speedScale = isMobileOrTablet() ? 0.35 : 0.5;
+          const accel = 0.0048 * speedScale;
+          const damping = 0.968;
+          const jitterX = (Math.random() - 0.5) * 0.09 * speedScale;
+          const jitterY = (Math.random() - 0.5) * 0.09 * speedScale;
 
-          vx = Math.max(-8, Math.min(8, vx + ax));
-          vy = Math.max(-8, Math.min(8, vy + ay));
+          vx = (vx + dx * accel + jitterX) * damping;
+          vy = (vy + dy * accel + jitterY) * damping;
+          const maxSpeed = 4.2 * speedScale;
+          vx = Math.max(-maxSpeed, Math.min(maxSpeed, vx));
+          vy = Math.max(-maxSpeed, Math.min(maxSpeed, vy));
 
           x += vx;
           y += vy;
 
-          const maxX = Math.max(1, window.innerWidth);
-          const maxY = Math.max(1, window.innerHeight);
-
           if (x < 0) {
             x = 0;
-            vx = Math.abs(vx) * 0.92;
-            ax *= -0.6;
+            vx = Math.abs(vx) * 0.46;
           } else if (x > maxX) {
             x = maxX;
-            vx = -Math.abs(vx) * 0.92;
-            ax *= -0.6;
+            vx = -Math.abs(vx) * 0.46;
           }
 
           if (y < 0) {
             y = 0;
-            vy = Math.abs(vy) * 0.92;
-            ay *= -0.6;
+            vy = Math.abs(vy) * 0.46;
           } else if (y > maxY) {
             y = maxY;
-            vy = -Math.abs(vy) * 0.92;
-            ay *= -0.6;
+            vy = -Math.abs(vy) * 0.46;
           }
 
-          window.dispatchEvent(
-            new MouseEvent("mousemove", {
-              clientX: x,
-              clientY: y,
-              bubbles: true,
-            }),
-          );
-          window.dispatchEvent(
-            new PointerEvent("pointermove", {
-              clientX: x,
-              clientY: y,
-              pointerType: "mouse",
-              bubbles: true,
-            }),
-          );
+          emitVirtualPointer(x, y);
+
+          framesToRetarget -= 1;
+          if (dist < 20 || framesToRetarget <= 0) {
+            pickNextTarget();
+          }
 
           animationFrameRef.current = window.requestAnimationFrame(step);
         };

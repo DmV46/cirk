@@ -17,9 +17,16 @@
   inset: 0;
   z-index: 0;
   background-color: #1a0508;
+  background-image: url("/IMG_7178.JPG");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+@media (max-width: 1024px) {
+  .fixedBackdropPhoto {
+    background-image: url("/IMG_7325.JPG");
+  }
 }
 
 .fixedBackdropCircles {
@@ -44,13 +51,13 @@
   z-index: 2;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 100% 80% at 50% 20%, rgba(0, 190, 202, 0.14) 0%, transparent 55%),
-    radial-gradient(ellipse 70% 60% at 80% 60%, rgba(255, 169, 38, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse 100% 80% at 50% 20%, rgba(0, 190, 202, 0.1) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 60% at 80% 60%, rgba(255, 169, 38, 0.07) 0%, transparent 50%),
     linear-gradient(
       135deg,
-      rgba(8, 6, 10, 0.72) 0%,
-      rgba(3, 3, 5, 0.78) 45%,
-      rgba(10, 8, 12, 0.74) 100%
+      rgba(8, 6, 10, 0.5) 0%,
+      rgba(3, 3, 5, 0.56) 45%,
+      rgba(10, 8, 12, 0.52) 100%
     );
 }
 
@@ -107,7 +114,7 @@
     to bottom,
     transparent 0%,
     transparent 45%,
-    rgba(0, 0, 0, 0.6) 100%
+    rgba(0, 0, 0, 0.4) 100%
   );
 }
 

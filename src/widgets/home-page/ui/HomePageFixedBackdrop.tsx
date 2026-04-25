@@ -1,7 +1,6 @@
 "use client";
 
 import { useMemo } from "react";
-import { publicPath } from "@/shared/lib/publicPath";
 import { buildMagicCircles, HERO_MAGIC_SEED } from "@/widgets/hero/lib/magicCircles";
 import styles from "./HomePageShell.module.css";
 
@@ -12,12 +11,7 @@ export function HomePageFixedBackdrop() {
   return (
     <div className={styles.fixedBackdrop} aria-hidden>
       <style dangerouslySetInnerHTML={{ __html: keyframesCss }} />
-      <div
-        className={styles.fixedBackdropPhoto}
-        style={{
-          backgroundImage: `url("${publicPath("/IMG_7178.JPG")}")`,
-        }}
-      />
+      <div className={styles.fixedBackdropPhoto} />
       <div className={styles.fixedBackdropCircles}>
         {circles.map((c) => (
           <div

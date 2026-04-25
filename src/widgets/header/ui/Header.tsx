@@ -1,5 +1,6 @@
 "use client";
 
+import type { MouseEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -19,6 +20,16 @@ const navLinks = [
 export function Header() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const handleScrollToPrices = (event: MouseEvent<HTMLAnchorElement>) => {
+    const pricesSection = document.getElementById("prices");
+    if (!pricesSection) {
+      return;
+    }
+    event.preventDefault();
+    pricesSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    window.history.replaceState(null, "", "#prices");
+  };
 
   useEffect(() => {
     if (mobileOpen) {
@@ -61,7 +72,7 @@ export function Header() {
           </nav>
 
           <div className={styles.ctaDesktop}>
-            <Link href="#prices" className={styles.btnPrimary}>
+            <Link href="#prices" className={styles.btnPrimary} onClick={handleScrollToPrices}>
               Начать занятие
             </Link>
           </div>
@@ -148,7 +159,10 @@ export function Header() {
               <Link
                 href="#prices"
                 className={styles.btnPrimaryFull}
-                onClick={() => setMobileOpen(false)}
+                onClick={(event) => {
+                  handleScrollToPrices(event);
+                  setMobileOpen(false);
+                }}
               >
                 Начать занятие
               </Link>

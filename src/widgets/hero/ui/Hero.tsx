@@ -1,5 +1,6 @@
 "use client";
 
+import type { MouseEvent } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
@@ -110,6 +111,16 @@ function SerenityWords({
 export function Hero() {
   const reduceMotion = useReducedMotion();
 
+  const handleScrollToPrices = (event: MouseEvent<HTMLAnchorElement>) => {
+    const pricesSection = document.getElementById("prices");
+    if (!pricesSection) {
+      return;
+    }
+    event.preventDefault();
+    pricesSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    window.history.replaceState(null, "", "#prices");
+  };
+
   return (
     <section className={styles.hero}>
       <div className={styles.content}>
@@ -181,7 +192,7 @@ export function Hero() {
               whileTap={{ scale: 0.95 }}
               className={styles.ctaMotion}
             >
-              <Link href="#prices" className={styles.btnTeal}>
+              <Link href="#prices" className={styles.btnTeal} onClick={handleScrollToPrices}>
                 Начать занятие
               </Link>
             </motion.div>
