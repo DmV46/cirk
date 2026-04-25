@@ -12,6 +12,21 @@
   border: 1px solid transparent;
 }
 
+.neonCardCompact {
+  padding: 1rem;
+  gap: 0.55rem;
+  border-radius: 6px;
+}
+
+.neonCardCompact .neonCardTitle {
+  font-size: 1rem;
+}
+
+.neonCardCompact .neonCardDesc {
+  font-size: 0.84rem;
+  line-height: 1.35;
+}
+
 .neonCard::before {
   content: "";
   position: absolute;

@@ -1,0 +1,84 @@
+.section {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-top: -1.2rem;
+  margin-bottom: 0.6rem;
+}
+
+@keyframes directionsMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee {
+  width: 100%;
+  margin: 0;
+  border: 1px solid color-mix(in srgb, var(--teal-neon) 38%, transparent);
+  border-radius: 0;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--card) 74%, transparent);
+  box-shadow:
+    0 0 16px color-mix(in srgb, var(--teal-neon) 34%, transparent),
+    inset 0 0 14px color-mix(in srgb, var(--purple-neon) 22%, transparent);
+}
+
+.marqueeTrack {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  padding: 0.72rem 0;
+  animation: directionsMarquee 24s linear infinite;
+  will-change: transform;
+}
+
+.marqueeItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.15rem;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-size: clamp(0.86rem, 1.1vw, 1rem);
+}
+
+.marqueeDot {
+  font-size: 1.05rem;
+  line-height: 1;
+  color: color-mix(in srgb, var(--fg) 75%, transparent);
+  text-shadow: 0 0 8px color-mix(in srgb, var(--fg) 45%, transparent);
+}
+
+.marqueeColor1 {
+  color: var(--teal-neon);
+  text-shadow: 0 0 10px var(--teal-neon-glow);
+}
+
+.marqueeColor2 {
+  color: var(--orange-neon);
+  text-shadow: 0 0 10px var(--orange-neon-glow);
+}
+
+.marqueeColor3 {
+  color: var(--red-neon);
+  text-shadow: 0 0 10px var(--red-neon-glow);
+}
+
+.marqueeColor4 {
+  color: var(--purple-neon);
+  text-shadow: 0 0 10px var(--purple-neon-glow);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marqueeTrack {
+    animation: none;
+    transform: translateX(0);
+  }
+}

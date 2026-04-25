@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import { Jura, Exo_2, JetBrains_Mono } from "next/font/google";
+import { Russo_One, JetBrains_Mono } from "next/font/google";
 import { Header } from "@/widgets/header/ui/Header";
 import { Footer } from "@/widgets/footer/ui/Footer";
 import { ThemeProvider } from "@/app/providers/ThemeProvider";
 import { NeonFlowBackground } from "@/shared/ui/neon-flow/NeonFlowBackground";
 import "./globals.css";
 
-const fontPrimary = Jura({
-  weight: ["700"],
+const fontPrimary = Russo_One({
+  weight: ["400"],
   variable: "--font-primary",
   subsets: ["latin", "cyrillic"],
 });
 
-const fontSecondary = Exo_2({
-  weight: ["400", "500", "600", "700"],
+const fontSecondary = Russo_One({
+  weight: ["400"],
   variable: "--font-secondary",
   subsets: ["latin", "cyrillic"],
 });

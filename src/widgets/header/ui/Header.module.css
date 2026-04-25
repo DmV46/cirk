@@ -35,8 +35,11 @@
 }
 
 .logoSvg {
-  width: 2rem;
-  height: 2rem;
+  width: 44px;
+  height: 44px;
+  display: block;
+  object-fit: contain;
+  object-position: center;
   flex-shrink: 0;
 }
 
@@ -93,7 +96,6 @@
   text-decoration: none;
   color: var(--muted-fg);
   transition: background 0.2s, color 0.2s;
-  text-shadow: 0 0 1.25rem rgba(0, 190, 202, 0.25);
 }
 
 .navLink:hover {
@@ -147,24 +149,27 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem 1rem;
+  padding: 0.62rem 1.2rem;
   font-family: var(--font-primary);
-  font-size: 0.75rem;
-  font-weight: 800;
+  font-size: 0.95rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   text-decoration: none;
-  border-radius: 9999px;
-  color: #09090b;
-  background: linear-gradient(90deg, #ffa926, #ff8c00);
-  box-shadow: 0 4px 20px rgba(255, 169, 38, 0.25);
-  transition: filter 0.2s, box-shadow 0.2s;
+  border-radius: 10px;
+  border: 1px solid var(--orange-neon);
+  color: var(--orange-neon);
+  background: transparent;
+  box-shadow: inset 0 0 4px var(--orange-neon-glow), 0 0 6px var(--orange-neon-glow);
+  transition: all 0.25s ease;
   white-space: nowrap;
 }
 
 .btnPrimary:hover {
-  filter: brightness(1.06);
-  box-shadow: 0 6px 28px rgba(255, 169, 38, 0.35);
+  background: color-mix(in srgb, var(--orange-neon) 16%, transparent);
+  box-shadow:
+    inset 0 0 7px var(--orange-neon-glow),
+    0 0 10px var(--orange-neon);
 }
 
 .burger {
@@ -321,7 +326,6 @@
   text-decoration: none;
   color: var(--muted-fg);
   transition: background 0.2s, color 0.2s;
-  text-shadow: 0 0 1.25rem rgba(0, 190, 202, 0.25);
 }
 
 .drawerNavLink:hover {

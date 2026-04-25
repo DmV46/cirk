@@ -3,61 +3,74 @@
   overflow: visible;
 }
 
-@keyframes directionCardDrift {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0) rotate(0deg);
-  }
-  20% {
-    transform: translate3d(3px, -5px, 0) rotate(0.4deg);
-  }
-  40% {
-    transform: translate3d(-2px, 3px, 0) rotate(-0.3deg);
-  }
-  60% {
-    transform: translate3d(-4px, -4px, 0) rotate(0.25deg);
-  }
-  80% {
-    transform: translate3d(2px, 2px, 0) rotate(-0.2deg);
-  }
+.frame {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 1.2rem;
+  min-height: 27rem;
+  display: flex;
+  border: 1px solid color-mix(in srgb, var(--teal-neon) 34%, transparent);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--card) 82%, transparent);
+  box-shadow:
+    0 0 24px color-mix(in srgb, var(--teal-neon) 26%, transparent),
+    inset 0 0 18px color-mix(in srgb, var(--purple-neon) 16%, transparent);
+  padding: clamp(1.55rem, 3.4vw, 2.35rem) clamp(1rem, 2.2vw, 1.55rem);
 }
 
-.cardFloat {
-  animation: directionCardDrift 9s ease-in-out infinite;
-  will-change: transform;
+.list {
+  display: flex;
+  flex-direction: row;
+  gap: 1.2rem;
+  flex: 1;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .cardFloat {
-    animation: none;
-  }
+.column {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.featuresGrid {
-  display: grid;
-  gap: 1.75rem;
-  margin-top: 3rem;
-  grid-template-columns: 1fr;
-  align-items: start;
-  overflow: visible;
-  position: relative;
+.listItem {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.15;
+  font-size: clamp(1rem, 1.55vw, 1.35rem);
+  text-align: center;
+  padding: 0.36rem 0.4rem;
 }
 
-@media (min-width: 560px) {
-  .featuresGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 2rem;
-  }
+.itemTeal {
+  color: var(--teal-neon);
+  text-shadow:
+    0 0 10px var(--teal-neon-glow),
+    0 0 20px color-mix(in srgb, var(--teal-neon) 42%, transparent);
 }
 
-.cardWrap {
-  min-width: 0;
-  align-self: start;
-  position: relative;
-  overflow: visible;
-  z-index: 0;
+.itemOrange {
+  color: var(--orange-neon);
+  text-shadow:
+    0 0 10px var(--orange-neon-glow),
+    0 0 20px color-mix(in srgb, var(--orange-neon) 42%, transparent);
 }
 
-.cardWrap:has([data-expanded="true"]) {
-  z-index: 40;
+.itemRed {
+  color: var(--red-neon);
+  text-shadow:
+    0 0 10px var(--red-neon-glow),
+    0 0 20px color-mix(in srgb, var(--red-neon) 42%, transparent);
 }
+
+.itemPurple {
+  color: var(--purple-neon);
+  text-shadow:
+    0 0 10px var(--purple-neon-glow),
+    0 0 20px color-mix(in srgb, var(--purple-neon) 42%, transparent);
+}
+

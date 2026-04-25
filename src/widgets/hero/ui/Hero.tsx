@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
+import { publicPath } from "@/shared/lib/publicPath";
 import styles from "./Hero.module.css";
 
 /** Характерный «спокойный» ease из премиальных лендингов (в духе Digital Serenity) */
@@ -112,16 +114,21 @@ export function Hero() {
     <section className={styles.hero}>
       <div className={styles.content}>
         <div className={styles.motionWrap}>
-          <SerenityWords
-            level="h1"
-            text="ОБЪЕДИНЕННАЯ ЦИРКОВАЯ СТУДИЯ"
-            className={styles.title}
-            wordClassName={styles.serenityWord}
-            ariaLabel="Объединенная цирковая студия"
-            stagger={0.11}
-            delayChildren={0.02}
-            reduceMotion={!!reduceMotion}
-          />
+          <motion.div
+            className={styles.logoWrap}
+            initial={reduceMotion ? false : { opacity: 0, filter: "blur(10px)" }}
+            animate={{ opacity: 1, filter: "blur(0px)" }}
+            transition={reduceMotion ? { duration: 0 } : { duration: 0.7, ease: serenityEase }}
+          >
+            <Image
+              src={publicPath("/logo_270x202px.svg")}
+              alt="Логотип объединенной цирковой студии"
+              width={270}
+              height={202}
+              className={styles.logo}
+              priority
+            />
+          </motion.div>
 
           <SerenityWords
             level="h2"

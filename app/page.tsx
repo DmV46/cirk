@@ -1,5 +1,6 @@
 import { Hero } from "@/widgets/hero/ui/Hero";
 import { HomePageShell } from "@/widgets/home-page/ui/HomePageShell";
+import { DirectionsMarquee } from "@/widgets/directions-marquee/ui/DirectionsMarquee";
 import { Directions } from "@/widgets/directions/ui/Directions";
 import { Principles } from "@/widgets/principles/ui/Principles";
 import { PricesSection } from "@/widgets/prices/ui/PricesSection";
@@ -10,10 +11,11 @@ export default function Home() {
   return (
     <HomePageShell>
       <Hero />
+      <DirectionsMarquee />
       <Directions />
-      <Principles />
-      <PricesSection />
       <AboutStudio />
+      <PricesSection />
+      <Principles />
       <FaqSection />
     </HomePageShell>
   );

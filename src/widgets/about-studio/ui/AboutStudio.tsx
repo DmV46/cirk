@@ -12,17 +12,6 @@ export function AboutStudio() {
         </div>
         <div className={styles.contentWrapper}>
           <div className={styles.text}>
-            <p className={styles.lead}>
-              Друзья, помните яркое выступление на нашем «Открытом микрофоне?» Спешим
-              познакомить вас с этими удивительными артистами поближе.
-            </p>
-
-            <p className={styles.paragraph}>
-              Перед вами — «Объединенная цирковая студия» из г. Московский. И теперь у
-              ваших детей есть шанс попробовать себя в настоящем цирковом искусстве!
-              🎉
-            </p>
-
             <p className={styles.callout}>
               🔥 Приглашаем детей от 5 лет на <span className={styles.emphasis}>БЕСПЛАТНОЕ</span> пробное
               занятие!

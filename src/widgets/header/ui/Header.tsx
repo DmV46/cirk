@@ -1,8 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { publicPath } from "@/shared/lib/publicPath";
 import styles from "./Header.module.css";
 
 const navLinks = [
@@ -13,29 +15,6 @@ const navLinks = [
   { href: "/about", label: "О нас" },
   { href: "/faq", label: "FAQ" },
 ];
-
-function LogoMark({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 40 40"
-      className={className}
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden
-    >
-      <circle
-        cx="20"
-        cy="20"
-        r="18"
-        stroke="#ffa926"
-        strokeWidth="2"
-        fill="none"
-      />
-      <path d="M20 8 L28 20 L20 32 L12 20 Z" fill="#00beca" opacity="0.8" />
-      <circle cx="20" cy="20" r="4" fill="#ffa926" />
-    </svg>
-  );
-}
 
 export function Header() {
   const pathname = usePathname();
@@ -57,7 +36,13 @@ export function Header() {
       <header className={styles.header}>
         <div className={`container ${styles.headerInner}`}>
           <Link href="/" className={styles.logo}>
-            <LogoMark className={styles.logoSvg} />
+            <Image
+              src={publicPath("/logo_200x200px.svg")}
+              alt="Логотип студии"
+              width={200}
+              height={200}
+              className={styles.logoSvg}
+            />
             <span className={styles.logoText}>Объединенная цирковая студия</span>
           </Link>
 
@@ -111,7 +96,13 @@ export function Header() {
           <aside className={styles.drawerPanel} aria-modal aria-label="Меню">
             <div className={styles.drawerHead}>
               <div className={styles.drawerLogoRow}>
-                <LogoMark className={styles.drawerLogoSvg} />
+                <Image
+                  src={publicPath("/logo_200x200px.svg")}
+                  alt="Логотип студии"
+                  width={200}
+                  height={200}
+                  className={styles.drawerLogoSvg}
+                />
                 <span className={styles.drawerLogoText}>Цирковая студия</span>
               </div>
               <button

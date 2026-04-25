@@ -23,8 +23,9 @@ function usePrefersCoarsePointer() {
 
 interface NeonCardProps {
   title: string;
-  description: string;
+  description?: string;
   colorClass: "neon-card-orange" | "neon-card-teal" | "neon-card-red" | "neon-card-purple";
+  size?: "default" | "compact";
   /** Описание скрыто до взаимодействия; `expanded` задаёт родитель (одна открытая карточка) */
   revealDescription?: boolean;
   expanded?: boolean;
@@ -36,8 +37,9 @@ interface NeonCardProps {
 
 export function NeonCard({
   title,
-  description,
+  description = "",
   colorClass,
+  size = "default",
   revealDescription = false,
   expanded = false,
   onRevealActivate,
@@ -73,6 +75,7 @@ export function NeonCard({
 
   const rootClass = [
     styles.neonCard,
+    size === "compact" ? styles.neonCardCompact : "",
     colorModuleClass,
     revealDescription ? styles.neonCardReveal : "",
   ]
@@ -83,7 +86,7 @@ export function NeonCard({
     return (
       <div className={rootClass}>
         <h3 className={styles.neonCardTitle}>{title}</h3>
-        <p className={styles.neonCardDesc}>{description}</p>
+        {description ? <p className={styles.neonCardDesc}>{description}</p> : null}
       </div>
     );
   }
