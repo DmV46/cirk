@@ -49,6 +49,16 @@
   text-shadow: 0 0 10px var(--orange-neon-glow);
 }
 
+.personName {
+  color: var(--purple-neon);
+  font-weight: 800;
+  text-shadow:
+    0 0 10px var(--purple-neon-glow),
+    0 0 20px color-mix(in srgb, var(--purple-neon) 42%, transparent),
+    0 0 30px color-mix(in srgb, var(--purple-neon) 52%, transparent);
+  animation: personNamePulse 1.8s ease-in-out infinite;
+}
+
 .list {
   list-style: none;
   padding: 0;
@@ -85,10 +95,19 @@
   font-weight: 600;
 }
 
+.phonesWrap {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.8rem;
+  vertical-align: top;
+}
+
 .phone {
+  display: inline-block;
   color: var(--teal-neon);
   text-decoration: none;
   text-shadow: 0 0 10px var(--teal-neon-glow);
+  font-weight: 500;
 }
 
 .phone:hover {
@@ -103,12 +122,37 @@
   box-shadow: 0 0 24px var(--teal-neon-glow);
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(26px) scale(0.985);
+  filter: blur(9px);
+  transition:
+    opacity 860ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 860ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 860ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s ease;
+  transition-delay: 220ms;
 }
 
 .securityBox:hover {
   transform: scale(1.02);
   box-shadow: 0 0 40px var(--teal-neon-glow), inset 0 0 20px var(--teal-neon-bg);
+}
+
+.revealItem {
+  opacity: 0;
+  transform: translateY(18px) scale(0.992);
+  filter: blur(7px);
+  transition:
+    opacity 640ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 640ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 640ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.revealItem.visible,
+.securityBox.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
 }
 
 .securityBox::before {
@@ -138,4 +182,34 @@
 
 .securityDesc {
   color: var(--muted-fg);
+}
+
+@keyframes personNamePulse {
+  0%,
+  100% {
+    text-shadow:
+      0 0 8px var(--purple-neon-glow),
+      0 0 16px color-mix(in srgb, var(--purple-neon) 48%, transparent),
+      0 0 24px color-mix(in srgb, var(--purple-neon) 34%, transparent);
+  }
+  50% {
+    text-shadow:
+      0 0 12px var(--purple-neon-glow),
+      0 0 24px color-mix(in srgb, var(--purple-neon) 70%, transparent),
+      0 0 36px color-mix(in srgb, var(--purple-neon) 54%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .personName {
+    animation: none;
+  }
+
+  .revealItem,
+  .securityBox {
+    transition: none;
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
 }
