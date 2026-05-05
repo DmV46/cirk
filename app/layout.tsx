@@ -37,7 +37,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" className="dark" suppressHydrationWarning>
+    <html 
+    lang="ru"
+     className="dark" 
+     suppressHydrationWarning>
       <body
         className={`${fontPrimary.variable} ${fontSecondary.variable} ${fontAccent.variable} layout-root`}
       >
