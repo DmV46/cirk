@@ -1,12 +1,17 @@
 import type { NextConfig } from "next";
+import { existsSync, readFileSync } from "node:fs";
+import path from "node:path";
 
 const isGithubActions = process.env.GITHUB_ACTIONS || false;
+const cnamePath = path.join(process.cwd(), "CNAME");
+const customDomain =
+  existsSync(cnamePath) ? readFileSync(cnamePath, "utf8").trim() : "";
 
 let repo = '';
 if (isGithubActions && process.env.GITHUB_REPOSITORY) {
   const repoName = process.env.GITHUB_REPOSITORY.split('/')[1];
-  // Не применяем basePath, если это пользовательский сайт (<username>.github.io)
-  if (!repoName.endsWith('.github.io')) {
+  // Для custom domain basePath не нужен: сайт открывается от корня домена.
+  if (!customDomain && !repoName.endsWith('.github.io')) {
     repo = `/${repoName}`;
   }
 }
