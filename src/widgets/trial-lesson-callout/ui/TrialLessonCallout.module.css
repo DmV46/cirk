@@ -1,0 +1,30 @@
+.section {
+  margin-top: calc(var(--page-section-padding-y) + 0.75rem);
+  padding: 0 0 0.75rem;
+}
+
+.frame {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--orange-neon);
+  border-radius: 12px;
+  background: linear-gradient(180deg, var(--orange-neon-bg), transparent);
+  box-shadow:
+    0 0 18px var(--orange-neon-glow),
+    inset 0 0 14px color-mix(in srgb, var(--orange-neon) 12%, transparent);
+}
+
+.text {
+  margin: 0;
+  font-size: clamp(1rem, 2.4vw, 1.1rem);
+  color: var(--card-fg);
+  line-height: 1.7;
+  text-align: center;
+}
+
+.emphasis {
+  color: var(--orange-neon);
+  font-weight: 700;
+  text-shadow: 0 0 10px var(--orange-neon-glow);
+}

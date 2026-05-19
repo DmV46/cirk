@@ -1,6 +1,7 @@
 /* ========== CSS Variables ========== */
 :root {
   --header-height: 4.5rem;
+  --page-section-padding-y: 6rem;
   --background: #f8fafc;
   --foreground: #020617;
   --muted: #e2e8f0;
@@ -188,11 +189,13 @@ body {
 
 /* ========== Page Sections ========== */
 .page-section {
-  padding: 6rem 0;
+  padding: var(--page-section-padding-y) 0;
 }
 
 @media (min-width: 640px) {
-  .page-section { padding: 8rem 0; }
+  :root {
+    --page-section-padding-y: 8rem;
+  }
 }
 
 .section-header {

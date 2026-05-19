@@ -49,14 +49,27 @@
   text-shadow: 0 0 10px var(--orange-neon-glow);
 }
 
-.personName {
-  color: var(--purple-neon);
-  font-weight: 800;
+.successLead {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--card-fg);
+  line-height: 1.6;
+  margin: 0 0 1rem;
+  padding: 0.85rem 1.15rem;
+  border: 1px solid var(--purple-neon);
+  border-radius: 12px;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--purple-neon) 18%, transparent),
+    color-mix(in srgb, var(--teal-neon) 14%, transparent)
+  );
+  box-shadow:
+    0 0 20px var(--purple-neon-glow),
+    0 0 28px color-mix(in srgb, var(--teal-neon) 35%, transparent),
+    inset 0 0 12px color-mix(in srgb, var(--purple-neon) 10%, transparent);
   text-shadow:
-    0 0 10px var(--purple-neon-glow),
-    0 0 20px color-mix(in srgb, var(--purple-neon) 42%, transparent),
-    0 0 30px color-mix(in srgb, var(--purple-neon) 52%, transparent);
-  animation: personNamePulse 1.8s ease-in-out infinite;
+    0 0 8px var(--purple-neon-glow),
+    0 0 14px color-mix(in srgb, var(--teal-neon) 40%, transparent);
 }
 
 .list {
@@ -184,27 +197,7 @@
   color: var(--muted-fg);
 }
 
-@keyframes personNamePulse {
-  0%,
-  100% {
-    text-shadow:
-      0 0 8px var(--purple-neon-glow),
-      0 0 16px color-mix(in srgb, var(--purple-neon) 48%, transparent),
-      0 0 24px color-mix(in srgb, var(--purple-neon) 34%, transparent);
-  }
-  50% {
-    text-shadow:
-      0 0 12px var(--purple-neon-glow),
-      0 0 24px color-mix(in srgb, var(--purple-neon) 70%, transparent),
-      0 0 36px color-mix(in srgb, var(--purple-neon) 54%, transparent);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .personName {
-    animation: none;
-  }
-
   .revealItem,
   .securityBox {
     transition: none;

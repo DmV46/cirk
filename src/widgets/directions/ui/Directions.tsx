@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { CyberText } from "@/shared/ui/cyber-text/CyberText";
-import { DIRECTIONS } from "../model/directionsData";
+import { LEFT_DIRECTIONS, RIGHT_DIRECTIONS } from "../model/directionsData";
 import styles from "./Directions.module.css";
 
 const COLOR_CLASSES = [
@@ -37,9 +37,9 @@ const itemVariants = {
 };
 
 export function Directions() {
-  const midpoint = Math.ceil(DIRECTIONS.length / 2);
-  const leftColumn = DIRECTIONS.slice(0, midpoint);
-  const rightColumn = DIRECTIONS.slice(midpoint);
+  const leftColumn = LEFT_DIRECTIONS;
+  const rightColumn = RIGHT_DIRECTIONS;
+  const midpoint = leftColumn.length;
 
   return (
     <section id="directions" className={`page-section ${styles.section}`}>

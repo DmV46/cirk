@@ -1,6 +1,7 @@
 import { Hero } from "@/widgets/hero/ui/Hero";
 import { HomePageShell } from "@/widgets/home-page/ui/HomePageShell";
 import { DirectionsMarquee } from "@/widgets/directions-marquee/ui/DirectionsMarquee";
+import { TrialLessonCallout } from "@/widgets/trial-lesson-callout/ui/TrialLessonCallout";
 import { Directions } from "@/widgets/directions/ui/Directions";
 import { Principles } from "@/widgets/principles/ui/Principles";
 import { PricesSection } from "@/widgets/prices/ui/PricesSection";
@@ -12,6 +13,7 @@ export default function Home() {
     <HomePageShell>
       <Hero />
       <DirectionsMarquee />
+      <TrialLessonCallout />
       <Directions />
       <AboutStudio />
       <PricesSection />

@@ -8,7 +8,7 @@ export function AboutStudio() {
   const textItemRefs = useRef<Array<HTMLElement | null>>([]);
   const securityRef = useRef<HTMLDivElement | null>(null);
   const [visibleTextItems, setVisibleTextItems] = useState<boolean[]>(
-    () => Array.from({ length: 15 }, () => false),
+    () => Array.from({ length: 14 }, () => false),
   );
   const [isSecurityVisible, setIsSecurityVisible] = useState(false);
 
@@ -66,67 +66,57 @@ export function AboutStudio() {
               ref={(node) => {
                 textItemRefs.current[0] = node;
               }}
-              className={`${styles.callout} ${styles.revealItem} ${visibleTextItems[0] ? styles.visible : ""}`}
+              className={`${styles.paragraph} ${styles.revealItem} ${visibleTextItems[0] ? styles.visible : ""}`}
             >
-              🔥 Приглашаем детей от 5 лет на <span className={styles.emphasis}>БЕСПЛАТНОЕ</span> пробное
-              занятие!
-            </p>
-
-            <p
-              ref={(node) => {
-                textItemRefs.current[1] = node;
-              }}
-              className={`${styles.paragraph} ${styles.revealItem} ${visibleTextItems[1] ? styles.visible : ""}`}
-            >
-              Создатель, руководитель и тренер студии{" "}—{" "}
-              <span className={styles.personName}>ВЛАДИМИР САМАЛЕТОВ</span>.
+              Создатель, руководитель и тренер студии —{" "}
+              <CyberText text="ВЛАДИМИР САМОЛЕТОВ" />.
             </p>
             <ul className={styles.list}>
               <li
                 ref={(node) => {
-                  textItemRefs.current[2] = node;
-                }}
-                className={`${styles.listItem} ${styles.revealItem} ${visibleTextItems[2] ? styles.visible : ""}`}
+                textItemRefs.current[1] = node;
+              }}
+              className={`${styles.listItem} ${styles.revealItem} ${visibleTextItems[1] ? styles.visible : ""}`}
               >
                 ✨ Артист цирка во втором поколении
               </li>
               <li
                 ref={(node) => {
-                  textItemRefs.current[3] = node;
-                }}
-                className={`${styles.listItem} ${styles.revealItem} ${visibleTextItems[3] ? styles.visible : ""}`}
+                textItemRefs.current[2] = node;
+              }}
+              className={`${styles.listItem} ${styles.revealItem} ${visibleTextItems[2] ? styles.visible : ""}`}
               >
                 ✨ Лауреат Национальной Премии «Циркъ»
               </li>
               <li
                 ref={(node) => {
-                  textItemRefs.current[4] = node;
-                }}
-                className={`${styles.listItem} ${styles.revealItem} ${visibleTextItems[4] ? styles.visible : ""}`}
+                textItemRefs.current[3] = node;
+              }}
+              className={`${styles.listItem} ${styles.revealItem} ${visibleTextItems[3] ? styles.visible : ""}`}
               >
                 ✨ Призер международных конкурсов
               </li>
               <li
                 ref={(node) => {
-                  textItemRefs.current[5] = node;
-                }}
-                className={`${styles.listItem} ${styles.revealItem} ${visibleTextItems[5] ? styles.visible : ""}`}
+                textItemRefs.current[4] = node;
+              }}
+              className={`${styles.listItem} ${styles.revealItem} ${visibleTextItems[4] ? styles.visible : ""}`}
               >
                 ✨ Член Союза Деятелей циркового искусства
               </li>
               <li
                 ref={(node) => {
-                  textItemRefs.current[6] = node;
-                }}
-                className={`${styles.listItem} ${styles.revealItem} ${visibleTextItems[6] ? styles.visible : ""}`}
+                textItemRefs.current[5] = node;
+              }}
+              className={`${styles.listItem} ${styles.revealItem} ${visibleTextItems[5] ? styles.visible : ""}`}
               >
                 ✨ В прошлом — артист Большого Московского Цирка (с детства!)
               </li>
               <li
                 ref={(node) => {
-                  textItemRefs.current[7] = node;
-                }}
-                className={`${styles.listItem} ${styles.revealItem} ${visibleTextItems[7] ? styles.visible : ""}`}
+                textItemRefs.current[6] = node;
+              }}
+              className={`${styles.listItem} ${styles.revealItem} ${visibleTextItems[6] ? styles.visible : ""}`}
               >
                 ✨ Сейчас — 6-й сезон работает приглашенным артистом в Большом Театре
                 (опера «Сказка о царе Салтане»)
@@ -135,43 +125,43 @@ export function AboutStudio() {
 
             <p
               ref={(node) => {
-                textItemRefs.current[8] = node;
+                textItemRefs.current[7] = node;
               }}
-              className={`${styles.paragraph} ${styles.revealItem} ${visibleTextItems[8] ? styles.visible : ""}`}
+              className={`${styles.successLead} ${styles.revealItem} ${visibleTextItems[7] ? styles.visible : ""}`}
             >
               Но главное — это успехи студии и ее воспитанников:
             </p>
             <ul className={styles.list}>
               <li
                 ref={(node) => {
-                  textItemRefs.current[9] = node;
-                }}
-                className={`${styles.listItem} ${styles.revealItem} ${visibleTextItems[9] ? styles.visible : ""}`}
+                textItemRefs.current[8] = node;
+              }}
+              className={`${styles.listItem} ${styles.revealItem} ${visibleTextItems[8] ? styles.visible : ""}`}
               >
                 🏆 Студия отмечена Благодарственным письмом Министерства Культуры РФ!
               </li>
               <li
                 ref={(node) => {
-                  textItemRefs.current[10] = node;
-                }}
-                className={`${styles.listItem} ${styles.revealItem} ${visibleTextItems[10] ? styles.visible : ""}`}
+                textItemRefs.current[9] = node;
+              }}
+              className={`${styles.listItem} ${styles.revealItem} ${visibleTextItems[9] ? styles.visible : ""}`}
               >
                 🏆 Ребята участвуют в престижных цирковых фестивалях, в том числе на
                 манеже легендарного циркового училища (ГУЦЭИ).
               </li>
               <li
                 ref={(node) => {
-                  textItemRefs.current[11] = node;
-                }}
-                className={`${styles.listItem} ${styles.revealItem} ${visibleTextItems[11] ? styles.visible : ""}`}
+                textItemRefs.current[10] = node;
+              }}
+              className={`${styles.listItem} ${styles.revealItem} ${visibleTextItems[10] ? styles.visible : ""}`}
               >
                 🏆 Воспитанники выступают на мероприятиях, концертах и шоу.
               </li>
               <li
                 ref={(node) => {
-                  textItemRefs.current[12] = node;
-                }}
-                className={`${styles.listItem} ${styles.revealItem} ${visibleTextItems[12] ? styles.visible : ""}`}
+                textItemRefs.current[11] = node;
+              }}
+              className={`${styles.listItem} ${styles.revealItem} ${visibleTextItems[11] ? styles.visible : ""}`}
               >
                 🌟 Одна из учениц уже получила приглашение со своим номером в
                 «Московский театр иллюзий» и выходит на профессиональную сцену!
@@ -180,9 +170,9 @@ export function AboutStudio() {
 
             <p
               ref={(node) => {
-                textItemRefs.current[13] = node;
+                textItemRefs.current[12] = node;
               }}
-              className={`${styles.paragraph} ${styles.revealItem} ${visibleTextItems[13] ? styles.visible : ""}`}
+              className={`${styles.paragraph} ${styles.revealItem} ${visibleTextItems[12] ? styles.visible : ""}`}
             >
               Хотите, чтобы ваш ребенок попал в такую команду? Приходите знакомиться!
               👇
@@ -190,9 +180,9 @@ export function AboutStudio() {
 
             <div
               ref={(node) => {
-                textItemRefs.current[14] = node;
+                textItemRefs.current[13] = node;
               }}
-              className={`${styles.contacts} ${styles.revealItem} ${visibleTextItems[14] ? styles.visible : ""}`}
+              className={`${styles.contacts} ${styles.revealItem} ${visibleTextItems[13] ? styles.visible : ""}`}
             >
               <div className={styles.contactRow}>
                 <span className={styles.contactLabel}>📍 Адрес студии:</span>{" "}
