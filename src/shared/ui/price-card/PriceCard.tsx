@@ -4,12 +4,14 @@ interface PriceCardProps {
   name: string;
   amount: string;
   highlight?: boolean;
+  onBuyClick?: () => void;
 }
 
 export function PriceCard({
   name,
   amount,
   highlight,
+  onBuyClick,
 }: PriceCardProps) {
   return (
     <div
@@ -20,6 +22,7 @@ export function PriceCard({
       <button
         className={`${styles.btn} ${highlight ? styles.btnHighlight : styles.btnDefault}`}
         type="button"
+        onClick={onBuyClick}
       >
         Купить
       </button>

@@ -1,11 +1,14 @@
  "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { BookLessonModal } from "@/shared/ui/book-lesson-modal/BookLessonModal";
 import { PriceCard } from "@/shared/ui/price-card/PriceCard";
 import { CyberText } from "@/shared/ui/cyber-text/CyberText";
 import styles from "./PricesSection.module.css";
 
 export function PricesSection() {
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+  const [selectedPlanName, setSelectedPlanName] = useState<string | undefined>();
   const prices = [
     {
       name: "8 ЗАНЯТИЙ В МЕСЯЦ",
@@ -102,11 +105,20 @@ export function PricesSection() {
                 name={price.name}
                 amount={price.amount}
                 highlight={price.highlight}
+                onBuyClick={() => {
+                  setSelectedPlanName(price.name);
+                  setIsBookingModalOpen(true);
+                }}
               />
             </div>
           ))}
         </div>
       </div>
+      <BookLessonModal
+        open={isBookingModalOpen}
+        planName={selectedPlanName}
+        onClose={() => setIsBookingModalOpen(false)}
+      />
     </section>
   );
 }
