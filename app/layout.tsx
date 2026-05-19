@@ -4,7 +4,6 @@ import { Header } from "@/widgets/header/ui/Header";
 import { Footer } from "@/widgets/footer/ui/Footer";
 import { ThemeProvider } from "@/app/providers/ThemeProvider";
 import { NeonFlowBackground } from "@/shared/ui/neon-flow/NeonFlowBackground";
-import { CallbackFab } from "@/shared/ui/callback-fab/CallbackFab";
 import "./globals.css";
 
 const fontPrimary = Russo_One({
@@ -49,7 +48,6 @@ export default function RootLayout({
           <Header />
           <main className="layout-main">{children}</main>
           <Footer />
-          <CallbackFab />
         </ThemeProvider>
       </body>
     </html>

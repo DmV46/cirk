@@ -1,6 +1,5 @@
 "use client";
 
-import type { FormEvent } from "react";
 import Link from "next/link";
 import styles from "./Footer.module.css";
 
@@ -14,17 +13,6 @@ const footerLinks = [
 ];
 
 export function Footer() {
-  const handleCallbackSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const form = event.currentTarget;
-    const phone = (new FormData(form).get("phone") ?? "").toString().trim();
-    if (!phone) {
-      return;
-    }
-    window.location.href = "tel:+79035868406";
-    form.reset();
-  };
-
   return (
     <footer className={styles.footer}>
       <div className={`container ${styles.footerInner}`}>
@@ -45,27 +33,6 @@ export function Footer() {
               </Link>
             ))}
           </nav>
-          <form className={styles.callbackForm} onSubmit={handleCallbackSubmit}>
-            <p className={styles.callbackTitle}>Остались вопросы? Напишите нам</p>
-            <input
-              className={styles.callbackInput}
-              type="text"
-              name="name"
-              placeholder="Ваше имя"
-              autoComplete="name"
-            />
-            <input
-              className={styles.callbackInput}
-              type="tel"
-              name="phone"
-              placeholder="Телефон для обратного звонка"
-              autoComplete="tel"
-              required
-            />
-            <button type="submit" className={styles.callbackButton}>
-              Заказать звонок
-            </button>
-          </form>
         </div>
         <div className={styles.footerBottom}>
           <div className={styles.footerContacts}>
