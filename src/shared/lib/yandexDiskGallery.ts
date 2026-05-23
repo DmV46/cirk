@@ -31,6 +31,12 @@ export type GalleryPhotoItem = {
   fullSrc: string;
 };
 
+export type GalleryPhotosManifest = {
+  generatedAt: string;
+  count: number;
+  photos: GalleryPhotoItem[];
+};
+
 function pickSizeUrl(sizes: YandexSize[] | undefined, ...preferred: string[]): string {
   if (!sizes?.length) {
     return "";
@@ -106,4 +112,47 @@ export async function fetchYandexGalleryPhotos(
   }
 
   return photos;
+}
+
+/** Манифест из public/gallery/photos.json (собирается при npm run build) */
+export async function fetchGalleryPhotosFromManifest(
+  manifestUrl: string,
+): Promise<GalleryPhotoItem[] | null> {
+  try {
+    const response = await fetch(manifestUrl);
+    if (!response.ok) {
+      return null;
+    }
+
+    const data = (await response.json()) as GalleryPhotosManifest;
+    if (!Array.isArray(data.photos) || data.photos.length === 0) {
+      return null;
+    }
+
+    return data.photos;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * На продакшене (GitHub Pages) API Яндекса из браузера блокируется CORS —
+ * используем статический манифест. В dev при отсутствии манифеста — прямой запрос к API.
+ */
+export async function loadGalleryPhotos(options: {
+  manifestUrl: string;
+  yandexPublicUrl?: string;
+}): Promise<GalleryPhotoItem[]> {
+  const fromManifest = await fetchGalleryPhotosFromManifest(options.manifestUrl);
+  if (fromManifest) {
+    return fromManifest;
+  }
+
+  if (process.env.NODE_ENV === "development" && options.yandexPublicUrl) {
+    return fetchYandexGalleryPhotos(options.yandexPublicUrl);
+  }
+
+  throw new Error(
+    "Не удалось загрузить фото. Пересоберите сайт (npm run build) или обновите страницу позже.",
+  );
 }

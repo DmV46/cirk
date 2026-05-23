@@ -1,39 +1,25 @@
- "use client";
+"use client";
 
 import { useEffect, useRef, useState } from "react";
 import { BookLessonModal } from "@/shared/ui/book-lesson-modal/BookLessonModal";
 import { PriceCard } from "@/shared/ui/price-card/PriceCard";
 import { CyberText } from "@/shared/ui/cyber-text/CyberText";
+import { allPricePlans, priceGroups } from "../model/pricesData";
 import styles from "./PricesSection.module.css";
 
 export function PricesSection() {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
   const [selectedPlanName, setSelectedPlanName] = useState<string | undefined>();
-  const prices = [
-    {
-      name: "8 ЗАНЯТИЙ В МЕСЯЦ",
-      amount: "11 000 ₽",
-    },
-    {
-      name: "10 ЗАНЯТИЙ В МЕСЯЦ",
-      amount: "12 400 ₽",
-    },
-    {
-      name: "12 ЗАНЯТИЙ В МЕСЯЦ",
-      amount: "13 650 ₽",
-      highlight: true,
-    },
-  ];
-  const infoGroupsRef = useRef<HTMLDivElement | null>(null);
+  const groupsLayoutRef = useRef<HTMLDivElement | null>(null);
   const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
-  const [isInfoVisible, setIsInfoVisible] = useState(false);
+  const [isGroupsVisible, setIsGroupsVisible] = useState(false);
   const [visibleCards, setVisibleCards] = useState<boolean[]>(() =>
-    prices.map(() => false),
+    allPricePlans.map(() => false),
   );
 
   useEffect(() => {
-    setVisibleCards(prices.map(() => false));
-  }, [prices.length]);
+    setVisibleCards(allPricePlans.map(() => false));
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -41,8 +27,8 @@ export function PricesSection() {
         entries.forEach((entry) => {
           const isVisibleNow = entry.isIntersecting && entry.intersectionRatio >= 0.25;
 
-          if (entry.target === infoGroupsRef.current) {
-            setIsInfoVisible(isVisibleNow);
+          if (entry.target === groupsLayoutRef.current) {
+            setIsGroupsVisible(isVisibleNow);
             return;
           }
 
@@ -59,8 +45,8 @@ export function PricesSection() {
       { threshold: [0, 0.25, 1] },
     );
 
-    if (infoGroupsRef.current) {
-      observer.observe(infoGroupsRef.current);
+    if (groupsLayoutRef.current) {
+      observer.observe(groupsLayoutRef.current);
     }
     cardRefs.current.forEach((card) => {
       if (card) {
@@ -71,7 +57,13 @@ export function PricesSection() {
     return () => {
       observer.disconnect();
     };
-  }, [prices.length]);
+  }, []);
+
+  const mainPlans = priceGroups[0].plans.map((plan, index) => ({ plan, index }));
+  const prepPlans = priceGroups[1].plans.map((plan, index) => ({
+    plan,
+    index: mainPlans.length + index,
+  }));
 
   return (
     <section id="prices" className="page-section">
@@ -81,71 +73,103 @@ export function PricesSection() {
             <CyberText text="ЦЕНЫ НА ЗАНЯТИЯ" />
           </h2>
         </div>
+
         <div
-          ref={infoGroupsRef}
-          className={`${styles.infoGroups} ${isInfoVisible ? styles.visible : ""}`}
+          ref={groupsLayoutRef}
+          className={`${styles.groupsLayout} ${isGroupsVisible ? styles.visible : ""}`}
         >
-          <div className={styles.infoBox}>
-            <h3 className={styles.groupTitle}>Основная группа</h3>
-            <p className={styles.infoItem}>✓ Первое пробное занятие — бесплатно!</p>
-            <p className={styles.infoItem}>
-              ✓ На занятии как правило сразу присутствует<br/>
-              <span className={styles.infoHighlight}>
-                3{"\u00A0"}-{"\u00A0"}4{"\u00A0"}тренера
-              </span>{" "}
-              по разным направлениям
-            </p>
-            <p className={styles.infoItem}>
-              ✓ Продолжительность занятия —{" "}
-              <span className={styles.infoHighlight}>2{"\u00A0"}часа</span>
-            </p>
-            <p className={styles.infoItem}>
-              ✓ Занятия — <span className={styles.infoHighlight}>3{"\u00A0"}раза в неделю</span>
-            </p>
-          </div>
-          <div className={styles.infoBox}>
-            <h3 className={`${styles.groupTitle} ${styles.groupTitlePrep}`}>
-              Подготовительная группа
-            </h3>
-            <p className={styles.infoItem}>✓ Первое пробное занятие — бесплатно!</p>
-            <p className={styles.infoItem}>
-              ✓ На занятии как правило присутствует<br/>
-              <span className={styles.infoHighlightPrep}>
-                2{"\u00A0"}-{"\u00A0"}3{"\u00A0"}тренера
-              </span>{" "}
-              по разным направлениям
-            </p>
-            <p className={styles.infoItem}>
-              ✓ Продолжительность занятия —{" "}
-              <span className={styles.infoHighlightPrep}>1{"\u00A0"}час</span>
-            </p>
-            <p className={styles.infoItem}>
-              ✓ Занятия —{" "}
-              <span className={styles.infoHighlightPrep}>2{"\u00A0"}раза в неделю</span>
-            </p>
-          </div>
-        </div>
-        <div className={styles.cardGrid}>
-          {prices.map((price, idx) => (
-            <div
-              key={price.name}
-              ref={(node) => {
-                cardRefs.current[idx] = node;
-              }}
-              className={`${styles.cardWrap} ${visibleCards[idx] ? styles.visible : ""}`}
-              style={{ transitionDelay: `${idx * 90}ms` }}
-            >
-              <PriceCard
-                name={price.name}
-                amount={price.amount}
-                highlight={price.highlight}
-                onBuyClick={() => {
-                  setSelectedPlanName(price.name);
-                  setIsBookingModalOpen(true);
-                }}
-              />
+          <article className={styles.priceGroup}>
+            <div className={styles.infoBox}>
+              <h3 className={styles.groupTitle}>Основная группа</h3>
+              <p className={styles.infoItem}>✓ Первое пробное занятие — бесплатно!</p>
+              <p className={styles.infoItem}>
+                ✓ На занятии как правило сразу присутствует
+                <br />
+                <span className={styles.infoHighlight}>
+                  3{"\u00A0"}-{"\u00A0"}4{"\u00A0"}тренера
+                </span>{" "}
+                по разным направлениям
+              </p>
+              <p className={styles.infoItem}>
+                ✓ Продолжительность занятия —{" "}
+                <span className={styles.infoHighlight}>2{"\u00A0"}часа</span>
+              </p>
+              <p className={styles.infoItem}>
+                ✓ Занятия — <span className={styles.infoHighlight}>3{"\u00A0"}раза в неделю</span>
+              </p>
             </div>
-          ))}
+
+            <div className={`${styles.cardGrid} ${styles.cardGridMain}`}>
+              {mainPlans.map(({ plan, index }) => (
+                <div
+                  key={plan.id}
+                  ref={(node) => {
+                    cardRefs.current[index] = node;
+                  }}
+                  className={`${styles.cardWrap} ${visibleCards[index] ? styles.visible : ""}`}
+                  style={{ transitionDelay: `${index * 90}ms` }}
+                >
+                  <PriceCard
+                    name={plan.name}
+                    amount={plan.amount}
+                    highlight={plan.highlight}
+                    onBuyClick={() => {
+                      setSelectedPlanName(plan.bookingLabel);
+                      setIsBookingModalOpen(true);
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
+          </article>
+
+          <article className={`${styles.priceGroup} ${styles.priceGroupPrep}`}>
+            <div className={`${styles.infoBox} ${styles.infoBoxPrep}`}>
+              <h3 className={`${styles.groupTitle} ${styles.groupTitlePrep}`}>
+                Подготовительная группа
+              </h3>
+              <p className={styles.infoItem}>✓ Первое пробное занятие — бесплатно!</p>
+              <p className={styles.infoItem}>
+                ✓ На занятии как правило присутствует
+                <br />
+                <span className={styles.infoHighlightPrep}>
+                  2{"\u00A0"}-{"\u00A0"}3{"\u00A0"}тренера
+                </span>{" "}
+                по разным направлениям
+              </p>
+              <p className={styles.infoItem}>
+                ✓ Продолжительность занятия —{" "}
+                <span className={styles.infoHighlightPrep}>1{"\u00A0"}час</span>
+              </p>
+              <p className={styles.infoItem}>
+                ✓ Занятия —{" "}
+                <span className={styles.infoHighlightPrep}>2{"\u00A0"}раза в неделю</span>
+              </p>
+            </div>
+
+            <div className={`${styles.cardGrid} ${styles.cardGridSingle}`}>
+              {prepPlans.map(({ plan, index }) => (
+                <div
+                  key={plan.id}
+                  ref={(node) => {
+                    cardRefs.current[index] = node;
+                  }}
+                  className={`${styles.cardWrap} ${visibleCards[index] ? styles.visible : ""}`}
+                  style={{ transitionDelay: `${index * 90}ms` }}
+                >
+                  <PriceCard
+                    name={plan.name}
+                    amount={plan.amount}
+                    highlight={plan.highlight}
+                    onBuyClick={() => {
+                      setSelectedPlanName(plan.bookingLabel);
+                      setIsBookingModalOpen(true);
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
+          </article>
         </div>
       </div>
       <BookLessonModal

@@ -3,10 +3,11 @@
 import { useEffect, useMemo, useState } from "react";
 import { EmblaGallery, type EmblaGallerySlide } from "@/shared/ui/embla-gallery/EmblaGallery";
 import {
-  fetchYandexGalleryPhotos,
+  loadGalleryPhotos,
   type GalleryPhotoItem,
   YANDEX_GALLERY_PUBLIC_URL,
 } from "@/shared/lib/yandexDiskGallery";
+import { publicPath } from "@/shared/lib/publicPath";
 import { GALLERY_VIDEOS_ENABLED, galleryVideos } from "../model/galleryData";
 import { PhotoLightbox } from "./PhotoLightbox";
 import styles from "./MediaGallery.module.css";
@@ -42,7 +43,10 @@ export function MediaGallery() {
 
     async function load() {
       try {
-        const loadedPhotos = await fetchYandexGalleryPhotos(YANDEX_GALLERY_PUBLIC_URL);
+        const loadedPhotos = await loadGalleryPhotos({
+          manifestUrl: publicPath("/gallery/photos.json"),
+          yandexPublicUrl: YANDEX_GALLERY_PUBLIC_URL,
+        });
         if (!cancelled) {
           setPhotos(loadedPhotos);
           const hasVideos = GALLERY_VIDEOS_ENABLED && galleryVideos.length > 0;
