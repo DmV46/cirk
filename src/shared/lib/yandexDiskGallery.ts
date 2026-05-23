@@ -1,5 +1,24 @@
+import { publicPath } from "./publicPath";
+
 /** Публичная папка: https://disk.yandex.ru/d/AzdvUfp-xDTtCA */
 export const YANDEX_GALLERY_PUBLIC_URL = "https://disk.yandex.ru/d/AzdvUfp-xDTtCA";
+
+/** Локальные пути из манифеста → URL с учётом basePath (GitHub Pages) */
+export function resolveGalleryAsset(src: string): string {
+  if (/^https?:\/\//i.test(src)) {
+    return src;
+  }
+  const normalized = src.startsWith("/") ? src : `/${src}`;
+  return publicPath(normalized);
+}
+
+export function withResolvedGalleryAssets(photos: GalleryPhotoItem[]): GalleryPhotoItem[] {
+  return photos.map((photo) => ({
+    ...photo,
+    thumbSrc: resolveGalleryAsset(photo.thumbSrc),
+    fullSrc: resolveGalleryAsset(photo.fullSrc),
+  }));
+}
 
 export type YandexSize = {
   name: string;
@@ -57,7 +76,7 @@ function mapFileToPhoto(file: YandexDiskFile, index: number): GalleryPhotoItem |
 
   const thumbSrc =
     pickSizeUrl(file.sizes, "S", "M", "DEFAULT") || file.preview || pickSizeUrl(file.sizes, "L");
-  const fullSrc = pickSizeUrl(file.sizes, "ORIGINAL", "XXXL", "XXL", "XL", "L") || thumbSrc;
+  const fullSrc = pickSizeUrl(file.sizes, "XXXL", "XXL", "XL", "L") || thumbSrc;
 
   if (!thumbSrc || !fullSrc) {
     return null;
@@ -145,7 +164,7 @@ export async function loadGalleryPhotos(options: {
 }): Promise<GalleryPhotoItem[]> {
   const fromManifest = await fetchGalleryPhotosFromManifest(options.manifestUrl);
   if (fromManifest) {
-    return fromManifest;
+    return withResolvedGalleryAssets(fromManifest);
   }
 
   if (process.env.NODE_ENV === "development" && options.yandexPublicUrl) {

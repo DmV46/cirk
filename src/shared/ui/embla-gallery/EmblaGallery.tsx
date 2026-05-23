@@ -192,6 +192,7 @@ export function EmblaGallery({ slides, variant, ariaLabel, onSlideClick, neon = 
                     draggable={false}
                     loading={index === 0 ? "eager" : "lazy"}
                     decoding="async"
+                    referrerPolicy="no-referrer"
                   />
                   {isPhotoGallery ? (
                     <span className={`${styles.emblaAction} ${styles.emblaActionFullscreen}`} aria-hidden>
@@ -227,6 +228,7 @@ export function EmblaGallery({ slides, variant, ariaLabel, onSlideClick, neon = 
                     alt=""
                     draggable={false}
                     loading="lazy"
+                    referrerPolicy="no-referrer"
                   />
                 </button>
               ))}

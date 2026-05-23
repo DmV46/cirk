@@ -20,6 +20,10 @@
 # production
 /build
 
+# галерея: бинарники генерируются при npm run build
+/public/gallery/images/*
+!/public/gallery/images/.gitkeep
+
 # misc
 .DS_Store
 *.pem

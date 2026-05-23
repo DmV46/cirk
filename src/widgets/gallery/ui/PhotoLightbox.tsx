@@ -71,6 +71,7 @@ export function PhotoLightbox({ photos, index, onClose }: PhotoLightboxProps) {
             alt={photo.title}
             className={styles.image}
             draggable={false}
+            referrerPolicy="no-referrer"
           />
         </motion.div>
       </motion.div>
