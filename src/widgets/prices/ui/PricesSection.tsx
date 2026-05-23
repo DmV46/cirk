@@ -24,7 +24,7 @@ export function PricesSection() {
       highlight: true,
     },
   ];
-  const infoRef = useRef<HTMLDivElement | null>(null);
+  const infoGroupsRef = useRef<HTMLDivElement | null>(null);
   const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
   const [isInfoVisible, setIsInfoVisible] = useState(false);
   const [visibleCards, setVisibleCards] = useState<boolean[]>(() =>
@@ -41,7 +41,7 @@ export function PricesSection() {
         entries.forEach((entry) => {
           const isVisibleNow = entry.isIntersecting && entry.intersectionRatio >= 0.25;
 
-          if (entry.target === infoRef.current) {
+          if (entry.target === infoGroupsRef.current) {
             setIsInfoVisible(isVisibleNow);
             return;
           }
@@ -59,8 +59,8 @@ export function PricesSection() {
       { threshold: [0, 0.25, 1] },
     );
 
-    if (infoRef.current) {
-      observer.observe(infoRef.current);
+    if (infoGroupsRef.current) {
+      observer.observe(infoGroupsRef.current);
     }
     cardRefs.current.forEach((card) => {
       if (card) {
@@ -82,14 +82,48 @@ export function PricesSection() {
           </h2>
         </div>
         <div
-          ref={infoRef}
-          className={`${styles.infoBox} ${isInfoVisible ? styles.visible : ""}`}
+          ref={infoGroupsRef}
+          className={`${styles.infoGroups} ${isInfoVisible ? styles.visible : ""}`}
         >
-          <p className={styles.infoItem}>✓ Первое пробное занятие — бесплатно!</p>
-          <p className={styles.infoItem}>
-            ✓ На занятии как правило сразу присутствует 3-4 тренера по разным направлениям
-          </p>
-          <p className={styles.infoItem}>✓ Продолжительность занятия — 2 часа</p>
+          <div className={styles.infoBox}>
+            <h3 className={styles.groupTitle}>Основная группа</h3>
+            <p className={styles.infoItem}>✓ Первое пробное занятие — бесплатно!</p>
+            <p className={styles.infoItem}>
+              ✓ На занятии как правило сразу присутствует<br/>
+              <span className={styles.infoHighlight}>
+                3{"\u00A0"}-{"\u00A0"}4{"\u00A0"}тренера
+              </span>{" "}
+              по разным направлениям
+            </p>
+            <p className={styles.infoItem}>
+              ✓ Продолжительность занятия —{" "}
+              <span className={styles.infoHighlight}>2{"\u00A0"}часа</span>
+            </p>
+            <p className={styles.infoItem}>
+              ✓ Занятия — <span className={styles.infoHighlight}>3{"\u00A0"}раза в неделю</span>
+            </p>
+          </div>
+          <div className={styles.infoBox}>
+            <h3 className={`${styles.groupTitle} ${styles.groupTitlePrep}`}>
+              Подготовительная группа
+            </h3>
+            <p className={styles.infoItem}>✓ Первое пробное занятие — бесплатно!</p>
+            <p className={styles.infoItem}>
+              ✓ На занятии как правило присутствует<br/>
+              <span className={styles.infoHighlightPrep}>
+                2{"\u00A0"}-{"\u00A0"}3{"\u00A0"}тренера
+              </span>{" "}
+              по разным направлениям
+            </p>
+            <p className={styles.infoItem}>
+              ✓ Продолжительность занятия —{" "}
+              <span className={styles.infoHighlightPrep}>1{"\u00A0"}час</span>
+            </p>
+            <p className={styles.infoItem}>
+              ✓ Занятия —{" "}
+              <span className={styles.infoHighlightPrep}>2{"\u00A0"}раза в неделю</span>
+            </p>
+          </div>
         </div>
         <div className={styles.cardGrid}>
           {prices.map((price, idx) => (

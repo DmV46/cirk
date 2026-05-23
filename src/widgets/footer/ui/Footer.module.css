@@ -27,14 +27,34 @@
 }
 
 .footerLogo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.footerLogoSvg {
+  width: 44px;
+  height: 44px;
+  display: block;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.footerLogoText {
   font-size: 1.125rem;
   font-weight: 800;
   background: linear-gradient(135deg, #ffa926 0%, #00beca 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  text-decoration: none;
   font-family: var(--font-primary);
+}
+
+@media (max-width: 1023px) {
+  .footerLogoText {
+    display: none;
+  }
 }
 
 .footerDesc {
@@ -169,6 +189,21 @@
 
 .footerContactLink:hover {
   text-decoration: underline;
+}
+
+.footerSocialRow {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid color-mix(in srgb, var(--border-muted) 70%, transparent);
+  gap: 0.5rem 1.25rem;
+}
+
+.footerSocialRow .footerContactLabel {
+  flex-shrink: 0;
+}
+
+.footerSocialLinks {
+  flex-shrink: 0;
 }
 
 .footerCopy {

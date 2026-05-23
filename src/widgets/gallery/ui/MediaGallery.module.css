@@ -1,0 +1,105 @@
+.gallery {
+  display: grid;
+  gap: 2.25rem;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.block {
+  display: grid;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.blockTitle {
+  margin: 0;
+  font-family: var(--font-primary);
+  font-size: clamp(1.1rem, 4vw, 1.6rem);
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--teal-neon);
+  text-shadow: 0 0 12px var(--teal-neon-glow);
+}
+
+.blockHint {
+  margin: -0.25rem 0 0;
+  font-size: 0.875rem;
+  color: var(--muted-fg);
+}
+
+.stateWrap {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.stateText,
+.error {
+  margin: 0;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--muted-fg);
+}
+
+.error {
+  padding: 0.875rem 1rem;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--orange-neon) 50%, transparent);
+  background: color-mix(in srgb, var(--orange-neon-bg) 40%, transparent);
+  color: var(--card-fg);
+}
+
+.skeletonCarousel {
+  height: clamp(14rem, 68vw, 22rem);
+  max-height: min(65dvh, 28rem);
+  border-radius: 12px;
+  background: linear-gradient(
+    110deg,
+    color-mix(in srgb, var(--card) 90%, transparent) 30%,
+    color-mix(in srgb, var(--teal-neon) 12%, transparent) 50%,
+    color-mix(in srgb, var(--card) 90%, transparent) 70%
+  );
+  background-size: 200% 100%;
+  animation: gallery-shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes gallery-shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+@media (min-width: 640px) {
+  .gallery {
+    gap: 3.5rem;
+  }
+
+  .block {
+    gap: 1rem;
+  }
+
+  .stateText,
+  .error {
+    font-size: 0.9rem;
+  }
+
+  .error {
+    padding: 1rem 1.25rem;
+  }
+
+  .skeletonCarousel {
+    height: clamp(14rem, 42vh, 22rem);
+    border-radius: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeletonCarousel {
+    animation: none;
+  }
+}

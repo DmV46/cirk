@@ -1,13 +1,16 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
+import { publicPath } from "@/shared/lib/publicPath";
+import { SocialLinks } from "@/shared/ui/social-links/SocialLinks";
 import styles from "./Footer.module.css";
 
 const footerLinks = [
   { href: "/", label: "Главная" },
-  { href: "/videos", label: "Видео" },
+  { href: "/videos", label: "Фото и видео" },
   { href: "/prices", label: "Цены" },
-  { href: "/trainers", label: "Тренеры" },
+  { href: "/trainers", label: "Наша команда" },
   { href: "/about", label: "О нас" },
   { href: "/faq", label: "FAQ" },
 ];
@@ -19,7 +22,14 @@ export function Footer() {
         <div className={styles.footerGrid}>
           <div>
             <Link href="/" className={styles.footerLogo}>
-              Объединенная цирковая студия
+              <Image
+                src={publicPath("/logo_200x200px.svg")}
+                alt="Объединенная цирковая студия"
+                width={200}
+                height={200}
+                className={styles.footerLogoSvg}
+              />
+              <span className={styles.footerLogoText}>Объединенная цирковая студия</span>
             </Link>
             <p className={styles.footerDesc}>
               Подготовка детей к цирковой гимнастике. Развиваем гибкость, силу и
@@ -55,6 +65,10 @@ export function Footer() {
               <a className={styles.footerContactLink} href="tel:+79057346102">
                 8 (905) 734-61-02
               </a>
+            </div>
+            <div className={`${styles.footerContactRow} ${styles.footerSocialRow}`}>
+              <span className={styles.footerContactLabel}>Соцсети:</span>
+              <SocialLinks className={styles.footerSocialLinks} />
             </div>
           </div>
           <p className={styles.footerCopy}>

@@ -17,7 +17,7 @@ export function TrainerCard({ name, role, image, bio }: TrainerCardProps) {
       <div className={styles.info}>
         <h3 className={styles.name}>{name}</h3>
         <p className={styles.role}>{role}</p>
-        <p className={styles.bio}>{bio}</p>
+        {bio ? <p className={styles.bio}>{bio}</p> : null}
       </div>
     </article>
   );

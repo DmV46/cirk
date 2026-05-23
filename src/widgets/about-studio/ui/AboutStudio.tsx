@@ -2,25 +2,20 @@
 
 import { useEffect, useRef, useState } from "react";
 import { CyberText } from "@/shared/ui/cyber-text/CyberText";
+import { SocialLinks } from "@/shared/ui/social-links/SocialLinks";
 import styles from "./AboutStudio.module.css";
 
 export function AboutStudio() {
   const textItemRefs = useRef<Array<HTMLElement | null>>([]);
-  const securityRef = useRef<HTMLDivElement | null>(null);
   const [visibleTextItems, setVisibleTextItems] = useState<boolean[]>(
     () => Array.from({ length: 14 }, () => false),
   );
-  const [isSecurityVisible, setIsSecurityVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           const isVisibleNow = entry.isIntersecting && entry.intersectionRatio >= 0.25;
-
-          if (entry.target === securityRef.current) {
-            setIsSecurityVisible(isVisibleNow);
-          }
 
           const itemIndex = textItemRefs.current.findIndex((item) => item === entry.target);
           if (itemIndex !== -1) {
@@ -43,10 +38,6 @@ export function AboutStudio() {
         observer.observe(item);
       }
     });
-    if (securityRef.current) {
-      observer.observe(securityRef.current);
-    }
-
     return () => {
       observer.disconnect();
     };
@@ -206,19 +197,11 @@ export function AboutStudio() {
                   </a>
                 </span>
               </div>
+              <div className={styles.socialRow}>
+                <span className={styles.contactLabel}>Мы в соцсетях:</span>
+                <SocialLinks />
+              </div>
             </div>
-          </div>
-          <div
-            ref={securityRef}
-            className={`${styles.securityBox} ${isSecurityVisible ? styles.visible : ""}`}
-          >
-            <h3 className={styles.securityTitle}>
-              БЕЗОПАСНОСТЬ ПРЕЖДЕ ВСЕГО
-            </h3>
-            <p className={styles.securityDesc}>
-              Все тренеры проходят регулярное обучение технике безопасности. 
-              Оборудование проверяется перед каждым занятием.
-            </p>
           </div>
         </div>
       </div>

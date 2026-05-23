@@ -10,9 +10,9 @@ import styles from "./Header.module.css";
 
 const navLinks = [
   { href: "/", label: "Главная" },
-  { href: "/videos", label: "Видео" },
+  { href: "/videos", label: "Фото и видео" },
   { href: "/prices", label: "Цены" },
-  { href: "/trainers", label: "Тренеры" },
+  { href: "/trainers", label: "Наша команда" },
   { href: "/about", label: "О нас" },
   { href: "/faq", label: "FAQ" },
 ];
@@ -20,6 +20,7 @@ const navLinks = [
 export function Header() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const isGalleryPage = pathname === "/videos";
 
   const handleScrollToPrices = (event: MouseEvent<HTMLAnchorElement>) => {
     const pricesSection = document.getElementById("prices");
@@ -44,7 +45,7 @@ export function Header() {
 
   return (
     <>
-      <header className={styles.header}>
+      <header className={`${styles.header} ${isGalleryPage ? styles.headerSolid : ""}`}>
         <div className={`container ${styles.headerInner}`}>
           <Link href="/" className={styles.logo}>
             <Image

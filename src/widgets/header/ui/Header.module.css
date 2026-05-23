@@ -11,6 +11,12 @@
   box-shadow: 0 4px 24px rgba(0, 190, 202, 0.12);
 }
 
+.headerSolid {
+  background: var(--header-bg);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
 .headerInner {
   display: flex;
   align-items: center;
@@ -66,7 +72,13 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 1023px) {
+  .logoText {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
   .logoText {
     max-width: none;
     font-size: 1.05rem;
@@ -276,13 +288,7 @@
 }
 
 .drawerLogoText {
-  font-family: var(--font-primary);
-  font-weight: 800;
-  font-size: 1rem;
-  background: linear-gradient(135deg, #ffa926 0%, #00beca 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  display: none;
 }
 
 .drawerClose {
