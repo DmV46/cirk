@@ -32,8 +32,8 @@ export function Footer() {
               <span className={styles.footerLogoText}>Объединенная цирковая студия</span>
             </Link>
             <p className={styles.footerDesc}>
-              Подготовка детей к цирковой гимнастике. Развиваем гибкость, силу и
-              уверенность в себе.
+              Объединенная Цирковая Студия — это синтез искусства и спорта,
+              опыта и молодости, новаторства и профессионализма.
             </p>
           </div>
           <nav className={styles.footerNav}>

@@ -34,6 +34,13 @@
   line-height: 1.6;
 }
 
+.goalsTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--fg);
+  margin: 0.5rem 0 0;
+}
+
 .aboutStats {
   display: flex;
   flex-direction: column;
