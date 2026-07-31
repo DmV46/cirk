@@ -3,8 +3,12 @@ import { AboutStudio } from "@/widgets/about-studio/ui/AboutStudio";
 import { Principles } from "@/widgets/principles/ui/Principles";
 
 export const metadata: Metadata = {
-  title: "О нас — Цирковая студия",
-  description: "История нашей цирковой студии, тренеры и подход к обучению детей",
+  title: "О нас",
+  description:
+    "Об объединённой цирковой студии в г. Московский: история, подход к обучению и успехи воспитанников. Адрес: 3 мкр, 3Б.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 export default function AboutPage() {

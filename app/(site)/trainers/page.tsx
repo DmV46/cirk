@@ -10,8 +10,11 @@ import {
 } from "@/widgets/team/model/teamData";
 
 export const metadata: Metadata = {
-  title: "Наша команда — Цирковая студия",
-  description: `${teamIntroLines.join(" ")} Знакомьтесь с командой Объединённой цирковой студии.`,
+  title: "Наша команда",
+  description: `${teamIntroLines.join(" ")} Тренеры объединённой цирковой студии в г. Московский — профессиональные артисты цирка.`,
+  alternates: {
+    canonical: "/trainers",
+  },
 };
 
 export default function TrainersPage() {

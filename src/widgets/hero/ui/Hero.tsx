@@ -124,6 +124,9 @@ export function Hero() {
   return (
     <section className={styles.hero}>
       <div className={styles.content}>
+        <h1 className={styles.seoTitle}>
+          Объединенная цирковая студия — воздушная гимнастика в г. Московский
+        </h1>
         <div className={styles.motionWrap}>
           <motion.div
             className={styles.logoWrap}
