@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { publicPath } from "@/shared/lib/publicPath";
+import { SocialLinks } from "@/shared/ui/social-links/SocialLinks";
 import styles from "./Header.module.css";
 
 const navLinks = [
@@ -76,6 +77,10 @@ export function Header() {
             <Link href="#prices" className={styles.btnPrimary} onClick={handleScrollToPrices}>
               Начать занятие
             </Link>
+          </div>
+
+          <div className={styles.headerSocialMobile}>
+            <SocialLinks className={styles.headerSocialLinks} />
           </div>
 
           <button
@@ -167,6 +172,7 @@ export function Header() {
               >
                 Начать занятие
               </Link>
+              <SocialLinks className={styles.drawerSocialLinks} />
             </div>
           </aside>
         </>
