@@ -4,6 +4,7 @@ import { Header } from "@/widgets/header/ui/Header";
 import { Footer } from "@/widgets/footer/ui/Footer";
 import { ThemeProvider } from "@/app/providers/ThemeProvider";
 import { JsonLd } from "@/shared/ui/json-ld/JsonLd";
+import { YandexMetrika } from "@/shared/ui/yandex-metrika/YandexMetrika";
 import { getLocalBusinessJsonLd } from "@/shared/lib/structuredData";
 import {
   SITE_DESCRIPTION,
@@ -83,6 +84,7 @@ export default function RootLayout({
         className={`${fontPrimary.variable} ${fontSecondary.variable} ${fontAccent.variable} layout-root`}
       >
         <JsonLd data={getLocalBusinessJsonLd()} />
+        <YandexMetrika />
         <ThemeProvider>
           <Header />
           <main className="layout-main">{children}</main>

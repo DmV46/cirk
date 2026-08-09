@@ -19,3 +19,5 @@ export const SITE_ADDRESS = {
 export const SITE_PHONES = ["+79035868406", "+79057346102"] as const;
 
 export const SITE_OG_IMAGE = "/ZAV_1132.JPG";
+
+export const YANDEX_METRIKA_ID = 111190889;

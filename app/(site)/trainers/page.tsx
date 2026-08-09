@@ -4,10 +4,11 @@ import { TrainerCard } from "@/shared/ui/trainer-card/TrainerCard";
 import {
   getTeamCardBio,
   getTeamCardRole,
-  getTrainerPlaceholderImage,
   teamIntroLines,
   teamMembers,
 } from "@/widgets/team/model/teamData";
+import { publicPath } from "@/shared/lib/publicPath";
+import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "Наша команда",
@@ -29,20 +30,13 @@ export default function TrainersPage() {
             <p className="section-subtitle">{teamIntroLines.join(" ")}</p>
           </div>
 
-          <div
-            style={{
-              display: "grid",
-              marginTop: "4rem",
-              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-              gap: "2rem",
-            }}
-          >
-            {teamMembers.map((member, index) => (
+          <div className={styles.list}>
+            {[...teamMembers].reverse().map((member) => (
               <TrainerCard
                 key={member.id}
                 name={member.name}
                 role={getTeamCardRole(member)}
-                image={getTrainerPlaceholderImage(member.name, index)}
+                photo={member.photo ? publicPath(member.photo) : undefined}
                 bio={getTeamCardBio(member)}
               />
             ))}
