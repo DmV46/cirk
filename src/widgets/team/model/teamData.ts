@@ -153,3 +153,7 @@ Patrick Sebastian «Le Plus Grand Cabaret Du Monde» в Париже
 ✨ Победитель телепроекта Первого канала «Большой спор» с Дмитрием Нагиевым`,
   },
 ];
+
+export function getDisplayedTeamMembers(): TeamMember[] {
+  return [...teamMembers].reverse();
+}

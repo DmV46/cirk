@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { CyberText } from "@/shared/ui/cyber-text/CyberText";
 import { TrainerCard } from "@/shared/ui/trainer-card/TrainerCard";
 import {
+  getDisplayedTeamMembers,
   getTeamCardBio,
   getTeamCardRole,
   teamIntroLines,
-  teamMembers,
 } from "@/widgets/team/model/teamData";
 import { publicPath } from "@/shared/lib/publicPath";
 import styles from "./page.module.css";
@@ -31,7 +31,7 @@ export default function TrainersPage() {
           </div>
 
           <div className={styles.list}>
-            {[...teamMembers].reverse().map((member) => (
+            {getDisplayedTeamMembers().map((member) => (
               <TrainerCard
                 key={member.id}
                 name={member.name}
