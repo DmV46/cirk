@@ -97,6 +97,10 @@ export function PricesSection() {
               <p className={styles.infoItem}>
                 ✓ Занятия — <span className={styles.infoHighlight}>3{"\u00A0"}раза в неделю</span>
               </p>
+              <p className={styles.infoItem}>
+                ✓ Льготная категория — скидка{" "}
+                <span className={styles.infoHighlight}>13%</span>
+              </p>
             </div>
 
             <div className={`${styles.cardGrid} ${styles.cardGridMain}`}>
@@ -111,6 +115,7 @@ export function PricesSection() {
                 >
                   <PriceCard
                     name={plan.name}
+                    duration={priceGroups[0].duration}
                     amount={plan.amount}
                     highlight={plan.highlight}
                     onBuyClick={() => {
@@ -145,6 +150,10 @@ export function PricesSection() {
                 ✓ Занятия —{" "}
                 <span className={styles.infoHighlightPrep}>2{"\u00A0"}раза в неделю</span>
               </p>
+              <p className={styles.infoItem}>
+                ✓ Льготная категория — скидка{" "}
+                <span className={styles.infoHighlightPrep}>13%</span>
+              </p>
             </div>
 
             <div className={`${styles.cardGrid} ${styles.cardGridSingle}`}>
@@ -159,6 +168,7 @@ export function PricesSection() {
                 >
                   <PriceCard
                     name={plan.name}
+                    duration={priceGroups[1].duration}
                     amount={plan.amount}
                     highlight={plan.highlight}
                     onBuyClick={() => {
